@@ -1,0 +1,21 @@
+!!! XML
+!!!
+%html{ :xmlns => "http://www.w3.org/1999/xhtml" }
+  %head
+    %meta{ "http-equiv"=>"Contet-Type", :content=>"text/html; charset=utf-8" }
+    - @page_title = "Code Ajax Tickets System :: " + ( ( @page_title ) ? @page_title : controller.action_name.capitalize )
+    %title= @page_title
+    = stylesheet_link_tag "common"
+    = stylesheet_link_tag "public"
+  %body
+    #public-main
+      #nav
+        = render_navs
+      #title
+        %h1 Welcome to Code Ajax Tickets System!
+      .clearer
+    - if flash[:notice]
+      #notice= flash[:notice]
+    - if flash[:error]
+      #error= flash[:error]
+    #content= yield

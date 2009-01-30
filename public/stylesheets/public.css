@@ -1,0 +1,51 @@
+#public-main, #content{
+	margin: 50px;
+	padding: 20px;
+	-moz-border-radius: 5px;
+	background-color: #D1DBEB;
+  border: 1px solid #43659C;
+}
+
+#content{
+	clear: both;
+}
+
+#title{
+	float: left;
+	margin: 20px;
+}
+
+#nav{
+	padding: 10px;
+	border-right: 2px solid white;
+	width: 100px;
+	float: left;
+  color: #43659C;
+  font-weight: bold;
+}
+
+#nav a{
+	display: block;
+  color: inherit;
+}
+
+#nav a:hover{
+	text-decoration: underline;
+}
+
+span.active{
+  color: #00c00f;
+}
+
+div#register{
+  padding: 10px;
+}
+
+div#register p{
+  margin-top: 5px;
+}
+
+div.oneline p{
+  float: left;
+  margin-right: 10px;
+}

@@ -1,0 +1,14 @@
+%h3 Register New User
+#register
+  - form_for(@user) do |f|
+    %p= f.error_messages
+    - { :username => "Screen Name", :email => "Email" }.each do |property, label|
+      %p= f.label property, label
+      %p= f.text_field property
+
+    %p= f.label :password
+    %p= f.password_field :password
+    %p= label "", "Repeat passowrd"
+    %p= password_field "others", "pass_confirm"
+    %p &nbsp;
+    %p= f.submit "Register"

@@ -1,0 +1,10 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+development:
+   name: Development
+
+offer:
+   name: Offer
+
+maintenance:
+   name: Maintance

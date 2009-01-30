@@ -1,0 +1,26 @@
+*{
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	color: black;
+}
+
+.clearer{
+	clear: both;
+}
+
+#notice, #error{
+  margin: 50px;
+  padding: 20px;
+  -moz-border-radius: 5px;
+}
+
+#notice{
+  background-color: green;
+  border: 1px solid yellow;
+}
+
+#error{
+  background-color: #FFCC00;
+  border: 1px solid red;
+}

@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+workmap:
+   name: Workmap.com
+   description: Facebook like site for business purposes
+   phase: maintenance
+
+essential:
+   name: Essential Store
+   description: ECommerce package for the Essential coop
+   phase: development

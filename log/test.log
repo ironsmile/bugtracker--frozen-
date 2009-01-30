@@ -1,0 +1,112 @@
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000086)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000057)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000034)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000037)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000037)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000036)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000037)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000036)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000069)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000046)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000029)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000030)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000029)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000030)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000029)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000029)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000069)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000044)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000028)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000030)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000030)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000029)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000030)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000029)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000068)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000044)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000029)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000031)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000029)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000030)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000029)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000029)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000068)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000044)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000028)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000033)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000030)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000029)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000029)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000029)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000069)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000044)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000029)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000031)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000030)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000029)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000030)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000029)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000069)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000045)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000028)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000031)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000030)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000029)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000030)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000029)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000069)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000044)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000028)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000030)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000030)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000030)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000029)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000030)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000068)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000045)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000028)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000030)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000030)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000029)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000029)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000030)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000069)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000044)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000029)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000033)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000029)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000030)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000029)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000028)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000093)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000045)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000032)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000036)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000032)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000030)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000030)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000031)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000068)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000044)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000028)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000029)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000030)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000029)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000030)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000030)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000068)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000045)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000029)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000029)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000029)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000030)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000028)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000028)[0m   [0mROLLBACK[0m
