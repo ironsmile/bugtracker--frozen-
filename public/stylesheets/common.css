@@ -3,24 +3,92 @@
 	margin: 0;
 	text-decoration: none;
 	color: black;
+  font-family: Helvetica, sans-serif, Arial, "Arial-Narrow";
+}
+
+body{
+  background-color: #F5F5F5;
 }
 
 .clearer{
 	clear: both;
 }
 
+a{
+  color: #425E9C;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+input[type=text], input[type=password]{
+  padding: 3px;
+  border: 1px solid #425E9C;
+}
+
+input[type=submit]{
+  padding: 5px; border: 1px solid #425E9C; 
+  cursor:pointer;
+}
+
 #notice, #error{
-  margin: 50px;
-  padding: 20px;
+  margin: 0 50px 0 50px;
+  padding: 15px;
   -moz-border-radius: 5px;
 }
 
 #notice{
-  background-color: green;
-  border: 1px solid yellow;
+  text-align: center;
+}
+
+#error ul{
+  margin-left: 25px;
+}
+
+#notice{
+  background-color: #CAFE63;
+  border: 1px solid green;
+  color: green;
 }
 
 #error{
-  background-color: #FFCC00;
+  background-color: #DF731B;
   border: 1px solid red;
+}
+
+#debug {
+  margin: 1em auto;
+}
+
+fieldset{
+  margin: 1em;
+  padding: 2em;
+  border: 1px solid #43659C;
+}
+
+legend{
+  padding: 5px;
+  border: 1px solid #43659C;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+}
+
+fieldset.debug_info {
+  text-align: left;
+  /*margin: 1em;*/
+  background: #eee; /* PC*/
+}
+
+.form_wrapper{
+  margin: 10px 0;
+}
+
+.form_wrapper table tr td{
+  padding: 5px;
+}
+
+.form_wrapper table tr td.label{
+  text-align: right;
 }

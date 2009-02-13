@@ -1,5 +1,5 @@
 #public-main, #content{
-	margin: 50px;
+	margin: 50px 50px 10px 50px;
 	padding: 20px;
 	-moz-border-radius: 5px;
 	background-color: #D1DBEB;
@@ -8,6 +8,7 @@
 
 #content{
 	clear: both;
+  margin-top: 10px;
 }
 
 #title{
@@ -37,13 +38,6 @@ span.active{
   color: #00c00f;
 }
 
-div#register{
-  padding: 10px;
-}
-
-div#register p{
-  margin-top: 5px;
-}
 
 div.oneline p{
   float: left;
