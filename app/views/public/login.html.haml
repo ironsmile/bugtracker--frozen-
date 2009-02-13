@@ -1,0 +1,20 @@
+%h3 Log Yourself In
+- form_for :user do |f|
+  .form_wrapper
+    %fieldset
+      %legend Enter Your Details
+      %table
+        %tr
+          %td.label
+            %label{ :for => "username" } Screen Name:
+          %td= f.text_field :username
+        %tr
+          %td.label
+            %label{ :for => "password" } Password:
+          %td= f.password_field :password
+        %tr
+          %td
+          %td= submit_tag "Log in"
+%p
+  You have no account? Fill our
+  = link_to "registration form!", { :controller => "users", :action => "new"}

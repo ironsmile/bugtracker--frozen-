@@ -1,0 +1,7 @@
+#nav
+  = nav_link "Home", { :controller => "public", :action => "home" }
+  - if user_logged?
+    = link_to "Log out", :action => "logout"
+  - else
+    = nav_link "Log in", { :controller => "public", :action => "login" }
+    = nav_link "Register", { :controller => "users", :action => "new" }
