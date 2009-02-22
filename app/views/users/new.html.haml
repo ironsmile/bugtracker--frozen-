@@ -1,22 +1,25 @@
 %h3 Register New User
-#register
-  - form_for(@user) do |f|
-    .form_wrapper
-      %fieldset
-        %legend Fill All Fields
-        - unless f.error_messages.empty?
-          #error= f.error_messages
-        %table
-          - { :username => "Screen Name:", :email => "Email:" }.each do |property, label|
-            %tr
-              %td.label= f.label property, label
-              %td= f.text_field property
+- form_for(@user) do |f|
+  .form_wrapper
+    %fieldset
+      %legend Fill All Fields
+      - unless f.error_messages.empty?
+        #error= f.error_messages
+      %table
+        - { :username => "Screen Name:", :email => "Email:" }.each do |property, label|
+          - observer = "#{property.to_s}_observe"
           %tr
-            %td.label= f.label :password, "Password:"
-            %td= f.password_field :password
-          %tr
-            %td.label= label "others", "pass_confirm", "Repeat passowrd:"
-            %td= password_field "others", "pass_confirm"
-          %tr
+            %td.label= f.label property, label
             %td
-            %td= f.submit "Register"
+              = f.text_field property
+              %p{ :id => observer } &nbsp;
+              = observe_field "user_#{property}", :frequency => 0.5, :function => "if(value.length){ put_ajax_loading_img('#{observer}','"+link_to_static('images/progress_active.gif')+"'); new Ajax.Updater('#{observer}', '"+url_for(:controller => :ajax, :action => "check_#{property}")+"', {asynchronous:true, evalScripts:true, parameters:'q=' + encodeURIComponent(value)+'&authenticity_token='+'#{form_authenticity_token}'}) } else {$('#{observer}').update('');}"
+        %tr
+          %td.label= f.label :password, "Password:"
+          %td= f.password_field :password
+        %tr
+          %td.label= label "others", "pass_confirm", "Repeat passowrd:"
+          %td= password_field "others", "pass_confirm"
+        %tr
+          %td
+          %td= f.submit "Register"

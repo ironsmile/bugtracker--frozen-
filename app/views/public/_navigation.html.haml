@@ -1,5 +1,5 @@
 #nav
-  = nav_link "Home", { :controller => "public", :action => "home" }
+  = nav_link "Home", { :controller => "public" }
   - if user_logged?
     = link_to "Log out", :action => "logout"
   - else

@@ -1,0 +1,10 @@
+%h2 User Profile
+.show_user
+  .pic= avatar_for @user
+  .info
+    %h3 Username:
+    %p= @user.username
+    %h3 Full Name:
+    %p= @user.name
+  - if @logged_user.admin? or @user == @logged_user
+    %control= "[ #{link_to( "edit", :action => "edit" )} ]"

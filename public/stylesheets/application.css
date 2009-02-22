@@ -1,0 +1,87 @@
+h1, h2, h3, h4{
+  margin: 10px 0;
+}
+
+p{
+  margin: 5px;
+}
+
+#top_nav, #left_nav{
+  background-color: #D1DBEB;
+}
+
+#main_div, #top_nav, #left_nav{
+  border: 1px solid #43659C;
+  -moz-border-radius: 5px;
+  margin: 5px;
+}
+
+#main_div{
+  margin: 5px 5px 5px 290px;
+  padding: 10px 10px 30px 10px;
+  min-height: 300px;
+  background-color: white;
+}
+
+#top_nav{
+  padding: 5px 20px;
+}
+
+#messages{
+  min-height: 35px;
+}
+
+#user_controls{
+  float: right;
+}
+
+#nav{
+  float: left;
+}
+
+#left_nav{
+  float: left;
+  width: 260px;
+  padding: 20px 5px;
+}
+
+.pagination{
+  margin: 20px auto;
+  text-align: center;
+}
+
+.project_wrapper{
+  -moz-border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
+}
+
+.odd{
+  background-color: #F5F5F5;
+}
+
+.even{
+  background-color: #e7d5d5;
+}
+
+.project_wrapper .desc{
+  margin-left: 10px;
+  font-style: italic;
+}
+
+.project_wrapper .bottom{
+  margin-top: 20px;
+  text-align: right;
+}
+
+.show_user p{
+  margin-left: 10px;
+}
+
+.show_user .pic{
+  float: left;
+}
+
+.show_user .info{
+  margin-left: 120px;
+}

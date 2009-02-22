@@ -5,7 +5,9 @@ class ApplicationController < ActionController::Base
   
   helper :all # include all helpers, all the time
   include ApplicationHelper
-
+  
+  before_filter :authenticate # do not forget to skip it where needed!
+  
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store
   protect_from_forgery :secret => 'f86145c4ca3ff8650949bdc5b1ab86fa'
@@ -15,7 +17,7 @@ class ApplicationController < ActionController::Base
   # from your application log (in this case, all fields with names like "password"). 
   # filter_parameter_logging :password
   
-  private
+  protected
   
   def authenticate
     unless user_logged?
@@ -23,8 +25,12 @@ class ApplicationController < ActionController::Base
       flash[:notice] = "Log yourself in first!"
       redirect_to :controller => "public", :action => "login"
       return false
+    else
+      @logged_user = User.find(session[:user_id])
     end
   end
+  
+#   def     
   
   def redirect_back
     unless session[:redirect_uri].nil?

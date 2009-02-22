@@ -25,20 +25,22 @@ a:hover{
 input[type=text], input[type=password]{
   padding: 3px;
   border: 1px solid #425E9C;
+  -moz-border-radius: 5px;
 }
 
 input[type=submit]{
   padding: 5px; border: 1px solid #425E9C; 
   cursor:pointer;
+  -moz-border-radius: 5px;
 }
 
 #notice, #error{
   margin: 0 50px 0 50px;
-  padding: 15px;
+  padding: 5px 15px;
   -moz-border-radius: 5px;
 }
 
-#notice{
+#notice, #error{
   text-align: center;
 }
 
@@ -57,6 +59,23 @@ input[type=submit]{
   border: 1px solid red;
 }
 
+#nav{
+  color: #43659C;
+  font-weight: bold;
+}
+
+#nav a{
+  color: inherit;
+}
+
+#nav a:hover{
+  text-decoration: underline;
+}
+
+#nav span.active{
+  color: #00c00f;
+}
+
 #debug {
   margin: 1em auto;
 }
@@ -65,6 +84,7 @@ fieldset{
   margin: 1em;
   padding: 2em;
   border: 1px solid #43659C;
+  -moz-border-radius: 5px;
 }
 
 legend{
@@ -73,6 +93,7 @@ legend{
   background-color: black;
   color: white;
   font-weight: bold;
+  -moz-border-radius: 5px;
 }
 
 fieldset.debug_info {
@@ -86,9 +107,18 @@ fieldset.debug_info {
 }
 
 .form_wrapper table tr td{
-  padding: 5px;
+  padding: 8px;
+  white-space:nowrap;
 }
 
 .form_wrapper table tr td.label{
   text-align: right;
+}
+
+div.fieldWithErrors{
+  display: inline;
+}
+
+div.fieldWithErrors input{
+  background-color: yellow;
 }

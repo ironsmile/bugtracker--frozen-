@@ -1,0 +1,9 @@
+- @ind = @ind || 0
+.project_wrapper{ :class=> ((@ind.even?) ? "even":"odd") }
+  - @ind += 1
+  =link_to project.name, project
+  .desc= project.description
+  .bottom
+    Created
+    = time_ago_in_words project.created_at
+    ago

@@ -1,10 +1,11 @@
 class PublicController < ApplicationController
 
+  skip_before_filter :authenticate, :except => :logout
+
 	def index
-		render :action => "home"
-	end
-	
-	def home
+    if user_logged?
+      redirect_to :controller => "users", :action => "dashboard"
+    end
 	end
 
 	def login
@@ -34,5 +35,9 @@ class PublicController < ApplicationController
       format.html { redirect_to :action => "login" }
     end
   end
+  
+  private
+  
+    
   
 end

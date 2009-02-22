@@ -2,13 +2,12 @@ class CreateProjects < ActiveRecord::Migration
   def self.up
     create_table :projects do |t|
 	 
-		t.column :name, :string
-		t.column :description, :text
-		t.column :key, :string
-		
-		t.column :versions, :integer
-		t.column :phase_id, :integer
-		
+		  t.string :name
+		  t.text :description
+		  t.string :key
+		  
+		  t.integer :phase_id
+		  
       t.timestamps
     end
   end

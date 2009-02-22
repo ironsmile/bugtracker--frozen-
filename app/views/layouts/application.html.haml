@@ -1,0 +1,29 @@
+!!! XML
+!!!
+%html{ :xmlns => "http://www.w3.org/1999/xhtml" }
+  %head
+    %meta{ "http-equiv"=>"Contet-Type", :content=>"text/html; charset=utf-8" }
+    %link{ :rel => "shortcut icon", :href => link_to_static("images/favicon.gif") }
+    %title= "Code Ajax Tickets System :: " + ( ( @page_title ) ? @page_title : controller.action_name.capitalize )
+    = stylesheet_link_tag "common"
+    = stylesheet_link_tag "application"
+    = javascript_include_tag :all
+  %body
+    #top_nav
+      #nav= render :partial => "users/top_nav", :locals => { :top_nav => @users }
+      #user_controls= render :partial => "users/controls", :locals => { :controls => @users }
+      .clearer
+    #messages
+      - if flash[:notice]
+        #notice= flash[:notice]
+      - else
+        #notice{ :style => "display:none;" }
+      - if flash[:error]
+        #error= flash[:error]
+      - else
+        #error{ :style => "display:none;" }
+    #left_nav
+    #main_div
+      #content= yield
+    .clearer
+    = render :partial => "public/debug_info", :locals => { :debug_info => @public }

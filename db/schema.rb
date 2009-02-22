@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(:version => 20090213123400) do
     t.string   "name"
     t.text     "description"
     t.string   "key"
-    t.integer  "versions"
     t.integer  "phase_id"
     t.datetime "created_at"
     t.datetime "updated_at"

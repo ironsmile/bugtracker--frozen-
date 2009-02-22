@@ -21,25 +21,18 @@
 	border-right: 2px solid white;
 	width: 100px;
 	float: left;
-  color: #43659C;
-  font-weight: bold;
 }
 
 #nav a{
 	display: block;
-  color: inherit;
-}
-
-#nav a:hover{
-	text-decoration: underline;
-}
-
-span.active{
-  color: #00c00f;
 }
 
 
 div.oneline p{
   float: left;
   margin-right: 10px;
+}
+
+.form_wrapper table tr td p{
+  display: inline;
 }

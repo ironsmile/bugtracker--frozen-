@@ -5,3 +5,11 @@
 #
 # two:
 #   column: value
+
+#petko's pass: 1234 on fixtures db salt and source salt - 42
+petko:
+  username: petko
+  full_name: Petko Napetov
+  password: 0b6067cfd4f9dd7aef06f7234b8096cb
+  email: petko@gmail.com
+  user_type_id: 0
