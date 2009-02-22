@@ -13,3 +13,10 @@ petko:
   password: 0b6067cfd4f9dd7aef06f7234b8096cb
   email: petko@gmail.com
   user_type_id: 0
+
+doycho:
+  username: doycho
+  full_name: Doychin
+  password: 0b6067cfd4f9dd7aef06f7234b8096cb
+  email: ironsmile@gmail.com
+  user_type_id: 2

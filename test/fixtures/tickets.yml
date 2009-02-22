@@ -1,0 +1,12 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+# one:
+#   column: value
+#
+# two:
+#   column: value
+
+test_ticket:
+  name: No monkeys in the store
+  description: It sessm that there are not monkeys in the store! Make something about it!
+  project: workmap

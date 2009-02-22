@@ -3,6 +3,8 @@ class Project < ActiveRecord::Base
 # 	has_many :document_files
 	belongs_to :phase
 	
+  has_many :tickets
+  
 	# validations
 	validates_presence_of :name
 end

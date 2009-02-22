@@ -7,4 +7,4 @@
     %h3 Full Name:
     %p= @user.name
   - if @logged_user.admin? or @user == @logged_user
-    %control= "[ #{link_to( "edit", :action => "edit" )} ]"
+    %control= "[ #{link_to( "edit", edit_user_path(@user) )} ]"

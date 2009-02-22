@@ -2,6 +2,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users
   map.resources :projects, :has_many => :tickets
 
+  
   # Sample of regular route:
   #   map.connect 'products/:id', :controller => 'catalog', :action => 'view'
   # Keep in mind you can assign values other than :controller and :action
