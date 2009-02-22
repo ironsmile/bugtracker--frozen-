@@ -30,7 +30,7 @@ class ApplicationController < ActionController::Base
     end
   end
   
-#   def     
+    
   
   def redirect_back
     unless session[:redirect_uri].nil?

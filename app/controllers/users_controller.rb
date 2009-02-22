@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   
   skip_before_filter :authenticate, :only => [ :new, :create ]
+  before_filter :change_restriction, :only => [ :edit, :update, :destroy ]
   
   def index
     page = params[:page] || 1
@@ -8,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by_username(params[:id])
+    @user = get_url_user
   end
 
   def dashboard
@@ -42,11 +43,11 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find_by_username(params[:id])
+    @user = get_url_user
   end
 
   def update
-    @user = User.find_by_username(params[:id])
+    @user = get_url_user
     others = params[:others]
     if others[:action] == "full_name"
       @notice = "Full name changed to '#{params[:user][:full_name]}' successfully!"
@@ -79,7 +80,7 @@ class UsersController < ApplicationController
 
   def destroy
     if request.delete?
-      @user = User.find_by_username(params[:id])
+      @user = get_url_user
       @user.destroy
     end
     
@@ -87,6 +88,21 @@ class UsersController < ApplicationController
       format.html { redirect_to(users_url) }
       format.xml  { head :ok }
     end
+  end
+
+
+private
+
+  def change_restriction
+    unless @logged_user.admin? or @logged_user.id == get_url_user.id
+      flash[:error] = "Do not play with our URLs!"
+      redirect_to :action => "index"
+      return false
+    end
+  end
+
+  def get_url_user
+    User.find_by_username(params[:id])
   end
 
 end
