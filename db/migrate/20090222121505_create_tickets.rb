@@ -7,6 +7,9 @@ class CreateTickets < ActiveRecord::Migration
       t.text :description
       t.integer :version_id
       t.integer :user_id
+      
+      t.string :status
+      t.string :priority
 
       t.timestamps
     end

@@ -1,3 +1,8 @@
-= render :partial => @project
+%h1
+  Project
+  = h( @project.name )
+.project_description= h(@project.description)
+%h3 Active tickets |
+= link_to "see all", project_tickets_path(@project)
 #tickets
-  = render :partial => @project.tickets
+  = render :partial => @project.tickets.sort_by{ |t| t.updated_at }[0..Project::TICKETS_ON_SHOW]

@@ -1,3 +1,6 @@
-- @users.each do |user|
-  %p= link_to user.username, user
+- if @users.empty?
+  No users found
+- else
+  - @users.each do |user|
+    %p= link_to user.username, user
 = will_paginate @users

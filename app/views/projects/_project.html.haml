@@ -1,7 +1,7 @@
 - @ind = @ind || 0
 .project_wrapper{ :class=> ((@ind.even?) ? "even":"odd") }
   - @ind += 1
-  =link_to project.name, project
+  = nav_link project.name, project
   .desc= project.description
   .bottom
     Created

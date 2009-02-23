@@ -1,4 +1,4 @@
 .ticket
   %p
-    %strong= link_to h(ticket.name), ticket
+    %strong= nav_link h(ticket.name), project_ticket_path(ticket.project.id, ticket.id)
   .ticket_description= h ticket.description

@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(:version => 20090222121505) do
     t.string   "name"
     t.text     "description"
     t.string   "key"
-    t.integer  "phase_id"
+    t.string   "phase"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -50,6 +50,8 @@ ActiveRecord::Schema.define(:version => 20090222121505) do
     t.text     "description"
     t.integer  "version_id"
     t.integer  "user_id"
+    t.string   "status"
+    t.string   "priority"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
