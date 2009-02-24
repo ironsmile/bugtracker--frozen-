@@ -43,6 +43,11 @@ p{
   float: left;
   width: 260px;
   padding: 20px 5px;
+  text-align: center;
+}
+
+#tickets{
+  padding: 10px 0;
 }
 
 .pagination{
@@ -84,4 +89,10 @@ p{
 
 .show_user .info{
   margin-left: 120px;
+}
+
+.ticket{
+  padding: 5px;
+  border: 1px solid black;
+  margin: 5px;
 }

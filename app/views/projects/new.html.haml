@@ -1,0 +1,21 @@
+- project = @project || Project.new
+- view_type = project.new_record? ? "Create" : "Edit"
+- form_for(project) do |f|
+  .form_wrapper
+    %fieldset
+      %legend= "#{view_type} Project"
+      - unless f.error_messages.empty?
+        .form_error= f.error_messages
+      %table
+        %tr
+          %td
+            %p.label= f.label :name, "Project Name:"
+            %p= f.text_field :name
+            %p.label= f.label :description, "Short description of the project:"
+            %p= f.text_area :description, :rows => 7
+            %p= f.submit view_type
+          %td
+            %p.label= f.label :phase, "Phase:"
+            %p= f.select :phase, Project::Phases.values
+            %p.label= label :others, :version, "Version:"
+            %p= text_field :others, :version

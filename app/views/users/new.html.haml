@@ -4,7 +4,7 @@
     %fieldset
       %legend Fill All Fields
       - unless f.error_messages.empty?
-        #error= f.error_messages
+        .form_error= f.error_messages
       %table
         - { :username => "Screen Name:", :email => "Email:" }.each do |property, label|
           - observer = "#{property.to_s}_observe"

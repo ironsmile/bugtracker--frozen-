@@ -34,7 +34,7 @@ input[type=submit]{
   -moz-border-radius: 5px;
 }
 
-#notice, #error{
+#notice, #error, .form_error{
   margin: 0 50px 0 50px;
   padding: 5px 15px;
   -moz-border-radius: 5px;
@@ -44,7 +44,7 @@ input[type=submit]{
   text-align: center;
 }
 
-#error ul{
+.form_error ul{
   margin-left: 25px;
 }
 
@@ -54,7 +54,7 @@ input[type=submit]{
   color: green;
 }
 
-#error{
+#error, .form_error{
   background-color: #DF731B;
   border: 1px solid red;
 }

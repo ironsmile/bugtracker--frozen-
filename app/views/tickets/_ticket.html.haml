@@ -1,4 +1,6 @@
 .ticket
   %p
     %strong= nav_link h(ticket.name), project_ticket_path(ticket.project.id, ticket.id)
-  .ticket_description= h ticket.description
+  .ticket_description= h(ticket.description)
+  %p
+    = "Created: #{ticket.created_at} | Last update: #{ticket.updated_at}"

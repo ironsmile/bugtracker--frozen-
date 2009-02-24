@@ -1,3 +1,4 @@
 class Version < ActiveRecord::Base
-	has_and_belongs_to_many :projects
+	belongs_to :project
+  validates_presence_of :project_id
 end
