@@ -1,6 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :users
-  map.resources :projects, :has_many => :tickets
+  map.resources :projects do |projects|
+    projects.resources :tickets, :has_many => :comments
+  end #, :has_many => :tickets
   
   # Sample of regular route:
   #   map.connect 'products/:id', :controller => 'catalog', :action => 'view'

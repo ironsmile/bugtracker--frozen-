@@ -1,0 +1,16 @@
+- @counter ||= 0
+%div.comment{ :id => "comment_#{comment.id}", :class => (@counter.even? ? "even":"odd") }
+  .comment_heading
+    %p= link_to h(comment.user.name), comment.user
+    = avatar_for comment.user
+    %p.time
+      Posted at
+      = h(comment.created_at)
+    - if comment.updated_at != comment.created_at
+      %p.time
+        Edited
+        = time_ago_in_words comment.updated_at
+        ago
+  .comment_body= h(comment.body)
+  .clearer
+- @counter += 1

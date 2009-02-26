@@ -5,3 +5,7 @@
 #
 # two:
 #   column: value
+
+workmap_def:
+  name: first version
+  project: workmap

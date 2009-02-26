@@ -22,7 +22,7 @@ a:hover{
   text-decoration: underline;
 }
 
-input[type=text], input[type=password]{
+input[type=text], input[type=password], textarea{
   padding: 3px;
   border: 1px solid #425E9C;
   -moz-border-radius: 5px;
@@ -46,6 +46,10 @@ input[type=submit]{
 
 .form_error ul{
   margin-left: 25px;
+}
+
+.form_error{
+  padding-bottom: 20px;
 }
 
 #notice{

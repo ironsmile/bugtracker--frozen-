@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   include ApplicationHelper
   
   before_filter :authenticate # do not forget to skip it where needed!
+  after_filter :save_last_visited_page
   
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store
@@ -43,6 +44,10 @@ class ApplicationController < ActionController::Base
   
   def posted_param?(param)
     request.post? and params[param]
+  end
+  
+  def save_last_visited_page
+    session[:redirect_uri] = request.request_uri
   end
   
 end

@@ -1,6 +1,7 @@
 class PublicController < ApplicationController
 
   skip_before_filter :authenticate, :except => :logout
+  skip_after_filter :save_last_visited_page, :only => [ :login, :logout ]
 
 	def index
     if user_logged?

@@ -3,16 +3,17 @@
   = h( @project.name )
 - if @logged_user.admin?
   .control
-    = "[ #{link_to "edit", edit_project_path} ]"
-    = "[ #{link_to 'Destroy', @project, :confirm => "Are you sure you want to destroy #{h @project.name}?", :method => :delete} ]"
+    = link_to "edit", edit_project_path
+    |
+    = link_to 'destroy', project_path, :confirm => "Are you sure you want to destroy #{h @project.name}?", :method => :delete
+[
+= link_to "New ticket", "#{project_tickets_path(@project)}/new"
+]
 .project_description= h(@project.description)
-%h3 Active tickets |
+%h3= "Latest #{Project::TICKETS_ON_SHOW} active tickets"
 = link_to "see all", project_tickets_path(@project)
 #tickets
   - if @project.tickets.empty?
     No tickets
   - else
-    = render( :partial => @project.tickets.sort_by{ |t| t.updated_at }[0..Project::TICKETS_ON_SHOW] )
-[
-= link_to "New ticket", "#{project_tickets_path(@project)}/new"
-]
+    = render( :partial => @project.tickets.sort_by{ |t| t.updated_at }.reverse[0...Project::TICKETS_ON_SHOW] )

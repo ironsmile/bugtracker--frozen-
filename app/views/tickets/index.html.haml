@@ -1,0 +1,7 @@
+%h2
+  Tickets for
+  = nav_link h(@project.name), project_path(@project)
+= will_paginate(@tickets)
+#tickets
+  = render :partial => @tickets
+= will_paginate(@tickets)

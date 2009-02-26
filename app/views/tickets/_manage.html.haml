@@ -1,0 +1,26 @@
+- ticket = @ticket || @project.tickets.new
+- manage_type = ticket.new_record? ? "New" : "Edit"
+%h1= "#{manage_type} Ticket"
+%h3
+  Project -
+  = h @project.name
+- form_for( [@project, ticket] ) do |f|
+  .form_wrapper
+    %p
+      Ticket for version
+      = f.select :version_id, @project.versions.sort_by{ |v| v.created_at }.reverse.map{ |v| [v.name, v.id] }
+      of this project
+    = render :partial => "forms/errors", :locals => { :f => f }
+    %fieldset
+      %legend Ticket details
+      %p.label= f.label :name, "Name:"
+      %p= f.text_field :name
+      %p.label= f.label :description, "Description"
+      %p= f.text_area :description, :rows => 9, :cols => 70
+      %p
+        = f.label :status, "Status:"
+        = f.select :status, Ticket::Statuses.values
+        = f.label :priority, "Priority:"
+        = f.select :priority, Ticket::Priorities.values
+        = f.hidden_field :project_id
+      %p= f.submit manage_type

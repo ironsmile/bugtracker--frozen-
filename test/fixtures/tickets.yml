@@ -6,7 +6,10 @@
 # two:
 #   column: value
 
-test_ticket:
+monkeys_ticket:
   name: No monkeys in the store
-  description: It sessm that there are not monkeys in the store! Make something about it!
-  project: workmap
+  description: It seems that there are not monkeys in the store! Make something about it!
+  project: essential
+  status: Open
+  priority: Normal
+  version: workmap_def

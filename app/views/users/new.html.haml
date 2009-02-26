@@ -3,8 +3,7 @@
   .form_wrapper
     %fieldset
       %legend Fill All Fields
-      - unless f.error_messages.empty?
-        .form_error= f.error_messages
+      = render :partial => "forms/errors", :locals => { :f => f }
       %table
         - { :username => "Screen Name:", :email => "Email:" }.each do |property, label|
           - observer = "#{property.to_s}_observe"

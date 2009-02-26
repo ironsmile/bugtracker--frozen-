@@ -17,7 +17,7 @@ p{
 }
 
 #main_div{
-  margin: 5px 5px 5px 290px;
+  margin: 5px 5px 5px 180px;
   padding: 10px 10px 30px 10px;
   min-height: 300px;
   background-color: white;
@@ -41,7 +41,7 @@ p{
 
 #left_nav{
   float: left;
-  width: 260px;
+  width: 150px;
   padding: 20px 5px;
   text-align: center;
 }
@@ -95,4 +95,64 @@ p{
   padding: 5px;
   border: 1px solid black;
   margin: 5px;
+  -moz-border-radius: 5px;
+}
+
+#comments{
+  padding: 10px;
+}
+
+#comments div.even{
+  background: #D1DBEB;
+}
+
+#comments div.odd{
+  background: #B0D1FF;
+}
+
+div.comment{
+  clear: both;
+  margin: 15px 0;
+  border: 1px solid #43659C;
+  padding: 5px;
+  -moz-border-radius: 5px;
+}
+
+div.comment_heading{
+  font-weight: bold;
+  color: #101170;
+  float: left;
+  border-right: 2px solid white;
+  width: 190px;
+  overflow: hidden;
+}
+
+div.comment_body, div.comment_heading{
+  padding: 10px;
+}
+
+div.comment_heading p{
+  color: inherit;
+}
+
+.time{
+  color: black;
+  font-size: 10px;
+}
+
+div.comment_body{
+  margin-left: 220px;
+}
+
+.centred{
+  text-align: center;
+}
+
+span.user_img{
+  position:static;
+  vertical-align: middle;
+}
+
+#user_controls span.text{
+  vertical-align: top;
 }

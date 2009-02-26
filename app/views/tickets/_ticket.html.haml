@@ -1,6 +1,11 @@
 .ticket
   %p
     %strong= nav_link h(ticket.name), project_ticket_path(ticket.project.id, ticket.id)
+  -if @logged_user.admin?
+    .control
+      = link_to "edit", edit_project_ticket_path(ticket.project, ticket)
+      |
+      = link_to "destroy", project_ticket_path(ticket.project, ticket), :method => :delete, :confirm => "are you sure?"
   .ticket_description= h(ticket.description)
   %p
-    = "Created: #{ticket.created_at} | Last update: #{ticket.updated_at}"
+    = "Created: #{ticket.created_at} | Last updated #{time_ago_in_words ticket.updated_at} ago"

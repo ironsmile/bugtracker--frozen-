@@ -3,7 +3,8 @@ class Project < ActiveRecord::Base
   before_destroy :destroy_versions
 
   TICKETS_ON_SHOW = 5
-
+  DEFAULT_FIRST_VERSION = "1.0"
+  
   Phases = {
     :offer => "Offer",
     :development => "Development",

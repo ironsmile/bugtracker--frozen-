@@ -26,13 +26,16 @@ class ProjectsController < ApplicationController
   def edit
     get_url_project
     respond_to do |format|
-      format.html { render :action => "new" }
+      format.html
     end
   end
 
   def update
     get_url_project
     responder @project.update_attributes(params[:project])
+    if params[:others][:version] and not params[:others][:version].empty?
+      @project.current_version = params[:others][:version]
+    end
   end
 
   def destroy

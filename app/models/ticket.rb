@@ -1,5 +1,7 @@
 class Ticket < ActiveRecord::Base
   belongs_to :project
+  belongs_to :version
+  has_many :comments
   
   Statuses = {
     :open => "Open",
@@ -20,5 +22,8 @@ class Ticket < ActiveRecord::Base
   
   validates_inclusion_of :status, :in => Statuses.values
   validates_inclusion_of :priority, :in => Priorities.values
-  
+  validates_presence_of :name
+  validates_presence_of :version_id
+  validates_presence_of :project_id
+  validates_presence_of :description
 end
