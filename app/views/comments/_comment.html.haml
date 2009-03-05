@@ -3,6 +3,8 @@
   .comment_heading
     %p= link_to h(comment.user.name), comment.user
     = avatar_for comment.user
+    - if @logged_user.admin? or @logged_user.id == comment.user.id
+      %p.controls= link_to "edit", edit_project_ticket_comment_path(comment.ticket.project, comment.ticket, comment)
     %p.time
       Posted at
       = h(comment.created_at)

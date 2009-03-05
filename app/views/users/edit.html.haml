@@ -8,7 +8,7 @@
     %p
       = f.text_field :full_name
       = hidden_field "others", "action", :value => "full_name"
-      = f.submit "Change"
+      = f.submit "Change", :onclick => "put_loading_message();"
 
 %h3 Sensitive data
 .help
@@ -24,7 +24,7 @@
     %p= password_field "others", "old_password"
     %p.label= label "others", "new_password", "New password:"
     %p= password_field "others", "new_password", :value => ""
-    %p= f.submit "Update"
+    %p= f.submit "Update", :onclick => "put_loading_message();"
 
 %h3 Your avatar
 = avatar_for @user

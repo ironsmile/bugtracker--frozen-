@@ -6,7 +6,7 @@ class CreateProjects < ActiveRecord::Migration
 		  t.text :description
 		  t.string :key
 		  
-		  t.string :phase
+		  t.integer :phase_id
 		  
       t.timestamps
     end

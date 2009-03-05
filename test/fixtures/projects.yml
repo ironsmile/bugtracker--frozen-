@@ -3,9 +3,9 @@
 workmap:
    name: Workmap.com
    description: Facebook like site for business purposes
-   phase: Maintenance
+   phase: maintenance
 
 essential:
    name: Essential Store
    description: ECommerce package for the Essential coop
-   phase: Development
+   phase: development

@@ -6,9 +6,23 @@ class CommentsController < ApplicationController
   end
 
   def edit
+    @comment = Comment.find(params[:id])
   end
 
   def update
+    @comment = Comment.find(params[:id])
+    success = @comment.update_attributes(params[:comment])
+    respond_to do |format|
+      format.js do
+        if success
+          @notice = "Your comment has been updated!"
+        else
+          @notice = @comment.errors.full_messages
+          @notice_type = :error
+        end
+        render :partial => "users/notice"
+      end
+    end
   end
 
   def create
@@ -20,10 +34,17 @@ class CommentsController < ApplicationController
           flash[:notice] = "Comment saved!"
           @comment.ticket.updated_at = Time.now
           @comment.ticket.save
-          redirect_to project_ticket_path(@comment.ticket.project, @comment.ticket)
         else
-          flash[:error] = @comment.errors.full_message
-          redirect_to project_ticket_path(@comment.ticket.project, @comment.ticket)
+          flash[:error] = @comment.errors.full_messages
+        end
+        redirect_to project_ticket_path(@comment.ticket.project, @comment.ticket)
+      end
+      format.js do
+        if success
+        else
+          @notice = @comment.errors.full_messages
+          @notice_type = :error
+          render :partial => "users/notice"
         end
       end
     end

@@ -1,3 +1,4 @@
+
 unless @notice.nil?
   type = @notice_type || :notice
   page[type].hide

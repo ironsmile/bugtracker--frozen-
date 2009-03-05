@@ -20,7 +20,7 @@
             %p= f.submit view_type
           %td
             %p.label= f.label :phase, "Phase:"
-            %p= f.select :phase, Project::Phases.values
+            %p= f.select :phase_id, Phase.find(:all).map{|p| [p.name, p.id] }
             - unless project.new_record? or project.current_version.nil?
               %p.label Current version:
               %p= h(project.current_version.name)

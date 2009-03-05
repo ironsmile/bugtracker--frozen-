@@ -5,21 +5,21 @@ class Project < ActiveRecord::Base
   TICKETS_ON_SHOW = 5
   DEFAULT_FIRST_VERSION = "1.0"
   
-  Phases = {
-    :offer => "Offer",
-    :development => "Development",
-    :maintenance => "Maintenance",
-    :finished => "Finished"
-  }
+#   Phases = {
+#     :offer => "Offer",
+#     :development => "Development",
+#     :maintenance => "Maintenance",
+#     :finished => "Finished"
+#   }
 
 	has_many :versions
-# 	has_many :document_files
-	
   has_many :tickets
+  belongs_to :phase
   
 	# validations
 	validates_presence_of :name
-  validates_inclusion_of :phase, :in => Phases.values
+  validates_presence_of :phase_id
+#   validates_inclusion_of :phase, :in => Phases.values
   
   def current_version
     versions.sort_by{ |v| v.created_at }[-1]
