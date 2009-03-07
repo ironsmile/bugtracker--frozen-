@@ -9,6 +9,15 @@
 [
 = link_to "New ticket", "#{project_tickets_path(@project)}/new"
 ]
+%h3 Info:
+%p
+  - if @project.current_version
+    %em Current version:
+    %strong= "#{h @project.current_version.name}"
+    |
+  %em Phase:
+  %strong= h @project.phase.name
+%h3 Description:
 .project_description= h(@project.description)
 %h3= "Latest #{Project::TICKETS_ON_SHOW} active tickets"
 = link_to "see all", project_tickets_path(@project)

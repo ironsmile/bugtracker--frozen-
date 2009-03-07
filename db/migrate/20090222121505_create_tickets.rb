@@ -8,8 +8,8 @@ class CreateTickets < ActiveRecord::Migration
       t.integer :version_id
       t.integer :user_id
       
-      t.string :status
-      t.string :priority
+      t.integer :status_id
+      t.integer :priority_id
 
       t.timestamps
     end

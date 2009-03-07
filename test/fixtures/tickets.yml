@@ -10,6 +10,6 @@ monkeys_ticket:
   name: No monkeys in the store
   description: It seems that there are not monkeys in the store! Make something about it!
   project: essential
-  status: Open
-  priority: Normal
+  status: open
+  priority: normal
   version: workmap_def

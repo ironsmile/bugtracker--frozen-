@@ -1,9 +1,12 @@
 - @counter ||= 0
 %div.comment{ :id => "comment_#{comment.id}", :class => (@counter.even? ? "even":"odd") }
   .comment_heading
-    %p= link_to h(comment.user.name), comment.user
-    = avatar_for comment.user
-    - if @logged_user.admin? or @logged_user.id == comment.user.id
+    - user = User.find(comment.user) # comment.user.admin? - undefined function
+    %p= link_to h(user.name), user
+    - if user.admin?
+      %p.time admin
+    = avatar_for user
+    - if @logged_user.admin? or @logged_user.id == user.id
       %p.controls= link_to "edit", edit_project_ticket_comment_path(comment.ticket.project, comment.ticket, comment)
     %p.time
       Posted at

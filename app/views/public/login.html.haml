@@ -5,17 +5,18 @@
       %legend Enter Your Details
       %table
         %tr
-          %td.label
-            %label{ :for => "username" } Screen Name:
+          %td.label= f.label :username, "Screen Name:"
           %td= f.text_field :username
         %tr
-          %td.label
-            %label{ :for => "password" } Password:
+          %td.label= f.label :password, "Password:"
           %td= f.password_field :password
         %tr
+          %td.label= label_tag :remember_me, "Remember me?"
+          %td= check_box_tag :remember_me
+        %tr
           %td
-          %td= submit_tag "Log in"
+          %td= f.submit "Log in"
 %p
   You have no account? Fill our
-  = link_to "registration form!", { :controller => "users", :action => "new"}
+  = link_to "registration form!", new_user_path
 = javascript_tag "$('user_username').focus();"

@@ -1,9 +1,8 @@
+page.call "hide_loading_message"
 
 unless @notice.nil?
   type = @notice_type || :notice
-  page[type].hide
-  page[type].replace_html(@notice)
-  page[type].appear
+  page[type].hide.replace_html(@notice).appear
   page.delay(8) do
     page[type].fade
   end

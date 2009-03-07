@@ -57,7 +57,7 @@ class TicketsController < ApplicationController
     respond_to do |format|
       format.html do
         if success
-          flash[:notice] = "The ticket was successfully #{params[:action]}d!" # Chuck Norris successfully actioned this ticket! :)
+          flash[:notice] = "The ticket was successfully #{params[:action]}d!" # Chuck Norris successfully action'd this ticket! :)
           redirect_to project_ticket_path(@project,@ticket)
         else
           render :action => "new"

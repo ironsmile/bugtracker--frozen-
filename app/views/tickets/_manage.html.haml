@@ -18,9 +18,9 @@
       %p.label= f.label :description, "Description"
       %p= f.text_area :description, :rows => 9, :cols => 70
       %p
-        = f.label :status, "Status:"
-        = f.select :status, Ticket::Statuses.values
-        = f.label :priority, "Priority:"
-        = f.select :priority, Ticket::Priorities.values
+        = f.label :status_id, "Status:"
+        = f.select :status_id, Status.find(:all).map{ |s| [s.name, s.id] }
+        = f.label :priority_id, "Priority:"
+        = f.select :priority_id, Priority.find(:all).sort_by{|p| p.order}.map{ |p| [p.name, p.id] }
         = f.hidden_field :project_id
       %p= f.submit manage_type

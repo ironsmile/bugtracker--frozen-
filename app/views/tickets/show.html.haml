@@ -1,3 +1,11 @@
+%h3 Metainfo:
+%p
+  Ticked #:
+  %strong= @ticket.id
+  |
+  Project:
+  %strong= link_to @ticket.project.name, project_path(@ticket.project)
+%h3 Ticket info:
 = render :partial => @ticket
 %h3.centred Comments
 = will_paginate @comments
@@ -12,4 +20,5 @@
       = render :partial => "forms/errors", :locals => { :f => f }
       %p= f.text_area :body, :rows => 9, :cols => 70
       %p= f.submit "Comment"
+= javascript_tag "$('comment_body').focus();"
   

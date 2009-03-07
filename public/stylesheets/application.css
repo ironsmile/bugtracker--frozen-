@@ -78,7 +78,7 @@ p{
   font-style: italic;
 }
 
-.project_wrapper .bottom{
+.bottom{
   margin-top: 20px;
   text-align: right;
 }
@@ -159,4 +159,8 @@ span.user_img{
 
 #user_controls span.text{
   vertical-align: top;
+}
+
+strong, h1, h2, h3, h4, h5{
+  color: #001682;
 }

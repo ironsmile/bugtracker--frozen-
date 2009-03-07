@@ -14,6 +14,12 @@ function put_loading_message(){
     e.update("Loading...").show();
 }
 
+function hide_loading_message(){
+  var e = null;
+  if( e = $("loading_message") )
+    e.hide();
+}
+
 Element.addMethods({
 
   animatedToggle : function(element){

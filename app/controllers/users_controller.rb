@@ -16,8 +16,13 @@ class UsersController < ApplicationController
   end
 
   def new
-     @user = User.new
-     render :layout => "public"
+    unless user_logged?
+      @user = User.new
+      render :layout => "public"
+    else
+      flash[:notice] = "You are already logged with registered user!"
+      redirect_to :action => :dashboard
+    end
   end
 
   def create
@@ -47,6 +52,7 @@ class UsersController < ApplicationController
   end
 
   def update
+#     sleep(3);
     @user = get_url_user
     others = params[:others]
     if others[:action] == "full_name"
@@ -63,9 +69,9 @@ class UsersController < ApplicationController
     success = (@notice_type != :error) ? @user.update_attributes( params[:user] ) : false
     unless success
       @notice_type = :error
-      @notice = @notice || @user.errors.full_messages
+      @notice ||= @user.errors.full_messages
     else
-      @notice = @notice || "Update successful!"
+      @notice ||= "Update successful!"
     end
     
     respond_to do |format|

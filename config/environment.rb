@@ -12,9 +12,10 @@ require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
 
-	config.gem "haml"
+  config.gem "haml"
   config.gem "avatar"
-	config.gem "activesupport"
+  config.gem "activesupport"
+  config.gem "RedCloth"
   config.gem 'mislav-will_paginate', :version => '>= 2.2.3', :lib => 'will_paginate', :source => 'http://gems.github.com'
 
   # Settings in config/environments/* take precedence over those specified here.
@@ -71,4 +72,6 @@ Rails::Initializer.run do |config|
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector
 end
+
+ActiveSupport::CoreExtensions::Time::Conversions::DATE_FORMATS.merge!(:default => '%d-%m-%Y %H:%M:%S')
 

@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   include ApplicationHelper
   
+  before_filter :check_for_permenent_login
   before_filter :authenticate # do not forget to skip it where needed!
   after_filter :save_last_visited_page
   
@@ -19,6 +20,13 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
   
   protected
+  
+  def check_for_permenent_login
+    if not user_logged? and cookies[:remembered_user]
+      user = User.find_by_persistent_login(cookies[:remembered_user])
+      user.login!(session)
+    end
+  end
   
   def authenticate
     unless user_logged?

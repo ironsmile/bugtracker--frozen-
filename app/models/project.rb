@@ -1,6 +1,6 @@
 class Project < ActiveRecord::Base
 
-  before_destroy :destroy_versions
+  before_destroy :destroy_cascade
 
   TICKETS_ON_SHOW = 5
   DEFAULT_FIRST_VERSION = "1.0"
@@ -29,7 +29,10 @@ class Project < ActiveRecord::Base
     versions.new( {:name => val} ).save
   end
   
-  def destroy_versions
+  private
+  
+  def destroy_cascade
+    tickets.each{ |t| t.destroy }
     versions.each{ |v| v.destroy }
   end
 end
