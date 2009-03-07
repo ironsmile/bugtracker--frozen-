@@ -1,0 +1,32 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+#   Statuses = {
+#     :open => "Open",
+#     :closed => "Closed",
+#     :reponed => "Re-opened",
+#     :doc => "Documentation",
+#     :feedback => "Feedback",
+#     :disaster => "Disaster",
+#     :unsolvable => "Unsolvable!"
+#   }
+
+open:
+  name: Open
+
+closed:
+  name: Closed
+
+reopened:
+  name: Reopened
+
+doc:
+  name: Documents
+
+feedback:
+  name: Feedback
+
+disaster:
+  name: Disaster
+
+unsolvable:
+  name: Unsolvable!

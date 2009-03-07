@@ -1,0 +1,20 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+#   Phases = {
+#     :offer => "Offer",
+#     :development => "Development",
+#     :maintenance => "Maintenance",
+#     :finished => "Finished"
+#   }
+
+offer:
+  name: Offer
+
+development:
+  name: Development
+
+maintenance:
+  name: Maintenance
+
+finished:
+  name: Finished

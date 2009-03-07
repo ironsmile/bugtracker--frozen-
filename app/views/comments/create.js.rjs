@@ -1,0 +1,3 @@
+page.insert_html :bottom, :comments, :partial => @comment
+page[@comment].highlight
+page[:comment_body].clear

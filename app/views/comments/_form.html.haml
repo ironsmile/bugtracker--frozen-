@@ -1,0 +1,13 @@
+%fieldset
+  %legend Your comment
+  - action = @ticket ? [@ticket.project, @ticket, @ticket.comments.new] : [ @comment.ticket.project, @comment.ticket, @comment ]
+  - submit_txt = @ticket ? "Comment" : "Edit"
+  - remote_form_for action  do |f|
+    = f.hidden_field :ticket_id
+    = f.hidden_field :user_id, :value => @logged_user.id
+    = render :partial => "forms/errors", :locals => { :f => f }
+    %p= f.label :body, "Comment body:"
+    %p= f.text_area :body, :rows => 9, :cols => 70
+    %p= f.submit submit_txt, :onclick => "put_loading_message();"
+- unless @comment.nil?
+  %p= link_to "Back to the ticket", project_ticket_path(@comment.ticket.project, @comment.ticket)

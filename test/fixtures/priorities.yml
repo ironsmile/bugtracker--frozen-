@@ -1,0 +1,24 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+#   Priorities = {
+#     :minor => "Minor",
+#     :normal => "Normal",
+#     :major => "Major",
+#     :critical => "Critical"
+#   }
+
+minor:
+  name: Minor
+  order: 3
+
+normal:
+  name: Normal
+  order: 2
+
+major:
+  name: Major
+  order: 1
+
+ciritcal:
+  name: Critical
+  order: 0
