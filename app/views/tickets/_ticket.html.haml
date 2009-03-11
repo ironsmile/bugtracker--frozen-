@@ -11,6 +11,6 @@
       = link_to "edit", edit_project_ticket_path(ticket.project, ticket)
       |
       = link_to "destroy", project_ticket_path(ticket.project, ticket), :method => :delete, :confirm => "are you sure?"
-  .ticket_description= h(ticket.description)
+  .ticket_description= textile_this ticket.description
   .bottom
     = "Created: <strong>#{ticket.created_at}</strong> | Last updated #{time_ago_in_words ticket.updated_at} ago"

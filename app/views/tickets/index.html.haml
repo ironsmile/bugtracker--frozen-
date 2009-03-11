@@ -3,5 +3,8 @@
   = nav_link h(@project.name), project_path(@project)
 = will_paginate(@tickets)
 #tickets
-  = render :partial => @tickets
+  - unless @tickets.empty?
+    = render :partial => @tickets
+  - else
+    No tickets
 = will_paginate(@tickets)

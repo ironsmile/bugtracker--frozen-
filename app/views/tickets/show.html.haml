@@ -11,14 +11,6 @@
 = will_paginate @comments
 #comments= render :partial => @comments
 = will_paginate @comments
-#new_comment
-  %fieldset
-    %legend Your comment
-    - remote_form_for [@ticket.project, @ticket, @ticket.comments.new] do |f|
-      = f.hidden_field :ticket_id
-      = f.hidden_field :user_id, :value => @logged_user.id
-      = render :partial => "forms/errors", :locals => { :f => f }
-      %p= f.text_area :body, :rows => 9, :cols => 70
-      %p= f.submit "Comment"
-= javascript_tag "$('comment_body').focus();"
+#new_comment_div
+  = render :partial => "comments/form"
   

@@ -15,6 +15,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       format.js do
         if success
+#           update_project(@comment) # we don't want to update the project, do we?
           @notice = "Your comment has been updated!"
         else
           @notice = @comment.errors.full_messages
@@ -32,8 +33,7 @@ class CommentsController < ApplicationController
       format.html do
         if success
           flash[:notice] = "Comment saved!"
-          @comment.ticket.updated_at = Time.now
-          @comment.ticket.save
+          update_project(@comment)
         else
           flash[:error] = @comment.errors.full_messages
         end
@@ -54,6 +54,13 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+  
+  def update_project(comment)
+    comment.ticket.updated_at = Time.now
+    comment.ticket.save
   end
 
 end

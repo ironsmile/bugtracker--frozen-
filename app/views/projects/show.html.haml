@@ -18,7 +18,7 @@
   %em Phase:
   %strong= h @project.phase.name
 %h3 Description:
-.project_description= h(@project.description)
+.project_description= textile_this @project.description
 %h3= "Latest #{Project::TICKETS_ON_SHOW} active tickets"
 = link_to "see all", project_tickets_path(@project)
 #tickets

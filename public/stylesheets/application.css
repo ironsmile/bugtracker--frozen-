@@ -135,6 +135,13 @@ div.comment_body, div.comment_heading{
   padding: 10px;
 }
 
+div.comment_body pre{
+  background: #F0F0EE;
+  margin: 5px;
+  padding: 20px 20px 20px 0; /* because of the haml indend we have some spaces on the left */
+  overflow: auto;
+}
+
 div.comment_heading p{
   color: inherit;
 }
@@ -163,4 +170,9 @@ span.user_img{
 
 strong, h1, h2, h3, h4, h5{
   color: #001682;
+}
+
+del{
+  text-decoration: line-through;
+  color: red;
 }

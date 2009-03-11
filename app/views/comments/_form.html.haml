@@ -7,7 +7,6 @@
     = f.hidden_field :user_id, :value => @logged_user.id
     = render :partial => "forms/errors", :locals => { :f => f }
     %p= f.label :body, "Comment body:"
-    %p= f.text_area :body, :rows => 9, :cols => 70
+    %p= textile_editor :comment, :body, :rows => 9, :cols => 70
+    %p= render :partial => "forms/textile_info"
     %p= f.submit submit_txt, :onclick => "put_loading_message();"
-- unless @comment.nil?
-  %p= link_to "Back to the ticket", project_ticket_path(@comment.ticket.project, @comment.ticket)

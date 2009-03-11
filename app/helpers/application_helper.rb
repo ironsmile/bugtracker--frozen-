@@ -39,4 +39,11 @@ module ApplicationHelper
     link_to_static("images/#{fname}")
   end
   
+  def textile_this(string)
+    string.gsub! /(\n{{{\n((.|\n)+)\n}}})/ do |match|
+      "<object><pre><code>\n#{$2.gsub!(/\n+/, "\n")}\n</code></pre></object>"
+    end
+    RedCloth.new(string).to_html
+  end
+  
 end
