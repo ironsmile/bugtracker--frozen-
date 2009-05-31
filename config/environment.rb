@@ -73,5 +73,11 @@ Rails::Initializer.run do |config|
   # config.active_record.observers = :cacher, :garbage_collector
 end
 
-ActiveSupport::CoreExtensions::Time::Conversions::DATE_FORMATS.merge!(:default => '%d-%m-%Y %H:%M:%S')
+Haml::Template.options[:preserve] = %w[code pre textarea]
+ActiveSupport::CoreExtensions::Time::Conversions::DATE_FORMATS.merge!(
+  {
+    :default => '%d-%m-%Y %H:%M:%S',
+    :rss => '%a, %d %b %Y %H:%M:%S %z'
+  })
+
 

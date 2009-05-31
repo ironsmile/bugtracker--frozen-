@@ -1,3 +1,4 @@
 page.insert_html :bottom, :comments, :partial => @comment
 page[@comment].highlight
 page[:comment_body].clear
+page.call "hide_loading_message"

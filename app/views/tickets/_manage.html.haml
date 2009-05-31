@@ -1,9 +1,9 @@
 - ticket = @ticket || @project.tickets.new
-- manage_type = ticket.new_record? ? "New" : "Edit"
+- manage_type = ticket.new_record? ? "Create" : "Update"
 %h1= "#{manage_type} Ticket"
 %h3
   Project -
-  = h @project.name
+  = link_to h(@project.name), @project
 - form_for( [@project, ticket] ) do |f|
   .form_wrapper
     %p

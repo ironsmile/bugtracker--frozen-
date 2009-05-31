@@ -3,7 +3,7 @@
 %html{ :xmlns => "http://www.w3.org/1999/xhtml" }
   %head
     %meta{ "http-equiv"=>"Contet-Type", :content=>"text/html; charset=utf-8" }
-    %link{ :rel => "shortcut icon", :href => link_to_static("images/favicon.gif") }
+    %link{ :rel => "shortcut icon", :href => link_to_static("images/favicon.ico") }
     %title= "Code Ajax Tickets System :: " + ( ( @page_title ) ? @page_title : controller.action_name.capitalize )
     = stylesheet_link_tag "common"
     = stylesheet_link_tag "application"
@@ -11,13 +11,17 @@
     - if %(new edit).include?( controller.action_name ) or ( controller.class == TicketsController and controller.action_name == 'show' )
       = javascript_tag "var SITE_ROOT = '#{ApplicationHelper::SITE_URL}'; "
       = textile_editor_initialize
+    - if @rss
+      = auto_discovery_link_tag :rss, @rss[:href]
   %body
     #top_nav
       #nav= render :partial => "users/top_nav", :locals => { :top_nav => @users }
       #user_controls= render :partial => "users/controls", :locals => { :controls => @users }
       .clearer
     #messages
-      #loading_message
+      #loading_message{ :style => "display:none;" }
+        %p Loading...
+        %p= image_tag "progress_active.gif"
       - if flash[:notice]
         #notice= flash[:notice]
       - else

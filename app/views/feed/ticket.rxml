@@ -1,0 +1,23 @@
+xml.instruct! :xml, :version=>"1.0" 
+xml.rss(:version=>"2.0"){
+  xml.channel{
+    xml.title("[#{h(@ticket.name)}](##{@ticket.id}) ticket on CATS")
+    xml.link(full_url(project_ticket_path(@ticket.project, @ticket)) )
+    xml.description "Feed yourself with comments for this ticket."
+    xml.language 'en-gb'
+    xml.pubDate(@ticket.created_at.to_s(:rss))
+    xml.generator "CATS"
+    xml.webMater "sales@code-ajax.co.uk"
+    xml.lastBuildDate @ticket.updated_at.to_s(:rss)
+      for comment in @ticket.comments.sort_by{ |c| c.created_at }.reverse
+        xml.item do
+          xml.title(h "Comment ##{comment.id} from #{comment.user.name}")
+          xml.description(textile_this comment.body)      
+          xml.author(h comment.user.name)               
+          xml.pubDate(comment.created_at.to_s(:rss))
+          xml.link(full_url(project_ticket_path(comment.ticket.project, comment.ticket))+"#comment_#{comment.id}")
+          xml.guid(full_url project_ticket_comment_path(comment.ticket.project, comment.ticket, comment))
+        end
+      end
+  }
+}

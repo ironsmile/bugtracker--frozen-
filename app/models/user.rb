@@ -16,6 +16,11 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :username, :message => "User with that username already exists!"
   validates_presence_of :password
   
+  has_many :comments
+  has_many :tickets
+  
+  before_destroy :destroy_cascade
+  
   def login!(session)
     session[:user_id] = self.id
   end
@@ -44,6 +49,13 @@ class User < ActiveRecord::Base
   
   def to_param
     username
+  end
+  
+private
+  
+  def destroy_cascade
+    comments.each{ |c| c.destroy }
+    tickets.each{ |c| c.destroy }
   end
   
 end

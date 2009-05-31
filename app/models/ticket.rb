@@ -7,6 +7,7 @@ class Ticket < ActiveRecord::Base
   has_many :comments
   belongs_to :status
   belongs_to :priority
+  belongs_to :user
   
 #   Statuses = {
 #     :open => "Open",

@@ -9,16 +9,27 @@ function put_ajax_loading_img(el_id,image_path){
 }
 
 function put_loading_message(){
+//   hide_notices(); // not needed anymore with the fixed-position message
   var e = null;
   if( e = $("loading_message") )
-    e.update("Loading...").show();
+    e.show();
 }
 
 function hide_loading_message(){
+  hide_element("loading_message");
+}
+
+function hide_notices(){
+  hide_element("error");
+  hide_element("notice");
+}
+
+function hide_element(eid){
   var e = null;
-  if( e = $("loading_message") )
+  if( e = $(eid) )
     e.hide();
 }
+
 
 Element.addMethods({
 

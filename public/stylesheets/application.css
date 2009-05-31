@@ -3,11 +3,19 @@ h1, h2, h3, h4{
 }
 
 p{
-  margin: 5px 0 5px 0;
+  margin: 5px 0;
 }
 
 #loading_message{
   text-align: center;
+  position: fixed;
+/*  width: 100px;
+  height: 60px;*/
+  padding: 5px 15px;
+  top: 0;
+  right: 0;
+  border: 1px solid black;
+  background-color: white;
 }
 
 #top_nav, #left_nav{
@@ -123,7 +131,7 @@ div.comment{
 }
 
 div.comment_heading{
-  font-weight: bold;
+/*   font-weight: bold; */
   color: #101170;
   float: left;
   border-right: 2px solid white;
@@ -154,6 +162,9 @@ div.comment_heading p{
 div.comment_body{
   margin-left: 220px;
 }
+div.comment_body pre{
+  padding: 10px;
+}
 
 .centred{
   text-align: center;
@@ -175,4 +186,8 @@ strong, h1, h2, h3, h4, h5{
 del{
   text-decoration: line-through;
   color: red;
+}
+
+div.comment_heading p.admin a{
+  color: #34C746;
 }

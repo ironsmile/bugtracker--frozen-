@@ -6,8 +6,7 @@ class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   include ApplicationHelper
   
-  before_filter :check_for_permenent_login
-  before_filter :authenticate # do not forget to skip it where needed!
+  before_filter [ :check_for_permenent_login, :authenticate ]
   after_filter :save_last_visited_page
   
   # See ActionController::RequestForgeryProtection for details
@@ -24,7 +23,9 @@ class ApplicationController < ActionController::Base
   def check_for_permenent_login
     if not user_logged? and cookies[:remembered_user]
       user = User.find_by_persistent_login(cookies[:remembered_user])
-      user.login!(session)
+      unless user.nil?
+        user.login!(session)
+      end
     end
   end
   
@@ -39,7 +40,12 @@ class ApplicationController < ActionController::Base
     end
   end
   
-    
+  def authenticate_admin
+    if user_logged? and not @logged_user.admin?
+      redirect_to :controller => "public", :action => "login"
+      return false
+    end
+  end
   
   def redirect_back
     unless session[:redirect_uri].nil?

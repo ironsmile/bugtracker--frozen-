@@ -3,6 +3,7 @@ class CommentsController < ApplicationController
   end
 
   def show
+    @comment = Comment.find(params[:id])
   end
 
   def edit
@@ -15,7 +16,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       format.js do
         if success
-#           update_project(@comment) # we don't want to update the project, do we?
+#           update_ticket(@comment) # we don't want to update the project, do we?
           @notice = "Your comment has been updated!"
         else
           @notice = @comment.errors.full_messages
@@ -27,13 +28,16 @@ class CommentsController < ApplicationController
   end
 
   def create
+    sleep(2)
     @comment = Comment.new(params[:comment])
     success = @comment.save
+    if success
+      update_ticket(@comment)
+    end
     respond_to do |format|
       format.html do
         if success
           flash[:notice] = "Comment saved!"
-          update_project(@comment)
         else
           flash[:error] = @comment.errors.full_messages
         end
@@ -58,9 +62,9 @@ class CommentsController < ApplicationController
 
   private
   
-  def update_project(comment)
+  def update_ticket(comment)
     comment.ticket.updated_at = Time.now
-    comment.ticket.save
+    comment.ticket.save!
   end
 
 end

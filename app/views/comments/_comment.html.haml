@@ -2,7 +2,7 @@
 %div.comment{ :id => "comment_#{comment.id}", :class => (@counter.even? ? "even":"odd") }
   .comment_heading
     - user = User.find(comment.user) # comment.user.admin? - undefined function
-    %p= link_to h(user.name), user
+    %p{ :class => (user.admin? ? "admin":"") }= link_to h(user.name), user
     - if user.admin?
       %p.time admin
     = avatar_for user
@@ -16,6 +16,6 @@
         Edited
         = time_ago_in_words comment.updated_at
         ago
-  .comment_body= textile_this comment.body
+  .comment_body~ textile_this comment.body
   .clearer
 - @counter += 1

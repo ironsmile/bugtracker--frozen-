@@ -11,19 +11,19 @@
       = f.submit "Change", :onclick => "put_loading_message();"
 
 %h3 Sensitive data
-.help
-  %strong Notice!
-  To change your email or password you will have to fill in your old password!
-
 - remote_form_for( @user, :method => "put" ) do |f|
   .form_wrapper
     = hidden_field "others", "action", :value => "password"
     %p.label= f.label :email, "Your email:"
     %p= f.text_field :email
-    %p.label= label "others", "old_password", "Password:"
-    %p= password_field "others", "old_password"
+    %p.label= label "others", "old_password", "Old Password:"
+    %p
+      = password_field "others", "old_password"
+      (required to change your email or password)
     %p.label= label "others", "new_password", "New password:"
     %p= password_field "others", "new_password", :value => ""
+    %p.label= label "others", "new_password_confirm", "Repeat the new password:"
+    %p= password_field "others", "new_password_confirm", :value => ""
     %p= f.submit "Update", :onclick => "put_loading_message();"
 
 %h3 Your avatar

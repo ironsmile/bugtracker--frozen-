@@ -4,7 +4,8 @@ module ApplicationHelper
   require 'digest/md5'
 
   HASH_SALT = 42
-  SITE_URL = "http://192.168.1.2/bugtracker/"
+  SITE_HOST = "http://192.168.1.2"
+  SITE_URL = "#{SITE_HOST}/bugtracker/"
 
   def debug_info_links
     ["params","session","env","request"].map do |v|
@@ -41,9 +42,15 @@ module ApplicationHelper
   
   def textile_this(string)
     string.gsub! /(\n{{{\n((.|\n)+)\n}}})/ do |match|
-      "<object><pre><code>\n#{$2.gsub!(/\n+/, "\n")}\n</code></pre></object>"
+      "\n\n<object><pre><code>#{$2.gsub!(/\n+/, "\n")}</code></pre></object>\n"
     end
     RedCloth.new(string).to_html
   end
+  
+  def full_url(relative_url)
+    SITE_HOST + relative_url
+  end
+  
+  
   
 end
