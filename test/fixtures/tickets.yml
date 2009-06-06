@@ -13,3 +13,4 @@ monkeys_ticket:
   status: open
   priority: normal
   version: workmap_def
+  user: petko

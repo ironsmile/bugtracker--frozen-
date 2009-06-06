@@ -1,0 +1,95 @@
+#popupbox .b {
+  background:url(../images/popupbox/b.png);
+}
+
+#popupbox .tl {
+  background:url(../images/popupbox/tl.png);
+}
+
+#popupbox .tr {
+  background:url(../images/popupbox/tr.png);
+}
+
+#popupbox .bl {
+  background:url(../images/popupbox/bl.png);
+}
+
+#popupbox .br {
+  background:url(../images/popupbox/br.png);
+}
+
+#popupbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  text-align: left;
+}
+
+#popupbox .popup {
+  position: relative;
+}
+
+#popupbox table {
+  border-collapse: collapse;
+}
+
+#popupbox td {
+  border-bottom: 0;
+  padding: 0;
+}
+
+#popupbox .body {
+  padding: 10px;
+  background: #fff;
+  width: 370px;
+}
+
+#popupbox .loading {
+  text-align: center;
+}
+
+#popupbox .image {
+  text-align: center;
+}
+
+#popupbox img {
+  border: 0;
+  margin: 0;
+}
+
+#popupbox .footer {
+  border-top: 1px solid #DDDDDD;
+  padding-top: 5px;
+  margin-top: 10px;
+  text-align: right;
+}
+
+#popupbox .tl, #popupbox .tr, #popupbox .bl, #popupbox .br {
+  height: 10px;
+  width: 10px;
+  overflow: hidden;
+  padding: 0;
+}
+
+#popupbox_overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height:100%;
+  width:100%;
+}
+
+.facebox_hide {
+  z-index:-100;
+}
+
+.facebox_overlayBG {
+  background-color: #000;
+  z-index: 99;
+}
+
+* html #popupbox_overlay { /* ie6 hack */
+  position: absolute;
+  height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px');
+}

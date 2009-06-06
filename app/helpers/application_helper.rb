@@ -18,10 +18,8 @@ module ApplicationHelper
       return ""
     end  
     option = Configuration.find_by_name "db_salt"
-    if option.nil?
-      raise "No db password salt found!"
-    end
-    Digest::MD5.hexdigest( "#{option.value}#{val}#{HASH_SALT}" )
+    s = option.nil? ? "" : option.value
+    Digest::MD5.hexdigest( "#{s}#{val}#{HASH_SALT}" )
   end
 
   def user_logged?
@@ -41,7 +39,7 @@ module ApplicationHelper
   end
   
   def textile_this(string)
-    string.gsub! /(\n{{{\n((.|\n)+)\n}}})/ do |match|
+    string.gsub! /(\{{{\n((.|\n)+)}}})/ do |match|
       "\n\n<object><pre><code>#{$2.gsub!(/\n+/, "\n")}</code></pre></object>\n"
     end
     RedCloth.new(string).to_html
@@ -51,6 +49,12 @@ module ApplicationHelper
     SITE_HOST + relative_url
   end
   
-  
+  def popupbox_init
+    'document.observe("dom:loaded", function() {
+      $$("a[rel*=popupbox]").each(function(a){
+        popupbox.forAnchor(a);
+      });
+    });'
+  end
   
 end

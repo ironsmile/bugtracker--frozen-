@@ -28,7 +28,7 @@ class CommentsController < ApplicationController
   end
 
   def create
-    sleep(2)
+#     sleep(2)
     @comment = Comment.new(params[:comment])
     success = @comment.save
     if success
@@ -45,6 +45,7 @@ class CommentsController < ApplicationController
       end
       format.js do
         if success
+          # renders _create.rjs
         else
           @notice = @comment.errors.full_messages
           @notice_type = :error
