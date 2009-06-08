@@ -9,7 +9,7 @@ module ApplicationHelper
 
   def debug_info_links
     ["params","session","env","request"].map do |v|
-      link_to(v,{},{:href=>'javascript:void(0);', :onclick=>"$('#{v}_debug_info').animatedToggle();return false"})
+      link_to(v,{},{:href=>"##{v}_debug_info", :rel=> "popupbox"})
     end.join " | \n"
   end
 
@@ -39,22 +39,14 @@ module ApplicationHelper
   end
   
   def textile_this(string)
-    string.gsub! /(\{{{\n((.|\n)+)}}})/ do |match|
-      "\n\n<object><pre><code>#{$2.gsub!(/\n+/, "\n")}</code></pre></object>\n"
+    string.gsub! /(\{{{\n((.|\n)+?)}}})/ do |match|
+      "\n\n<object><pre class='code'><code>#{$2.gsub!(/\n+/, "\n")}</code></pre></object>\n"
     end
     RedCloth.new(string).to_html
   end
   
   def full_url(relative_url)
     SITE_HOST + relative_url
-  end
-  
-  def popupbox_init
-    'document.observe("dom:loaded", function() {
-      $$("a[rel*=popupbox]").each(function(a){
-        popupbox.forAnchor(a);
-      });
-    });'
   end
   
 end

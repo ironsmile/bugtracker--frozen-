@@ -82,8 +82,10 @@ popupbox = {
   // fills the .content with the stuff :)
   // to be called after loading if done programatically :)
   display : function( stuff ){
+    popupbox.loading();
     if( !$('popupbox').visible() ) $('popupbox').appear();
     $$("#popupbox .footer")[0].show();
+    $$("#popupbox .close")[0].update('<img src="'+popupbox.settings.closeImage+'" title="close" alt="Close" class="close_image" />');
     $$("#popupbox .content")[0].update(stuff).show();
   },
   
@@ -159,7 +161,7 @@ popupbox.settings.popupboxHtml  = '\
                 </div> \
                 <div class="footer"> \
                   <a href="javascript:void(0);" class="close"> \
-                    <img src="'+popupbox.settings.closeImage+'" title="close" class="close_image" /> \
+                    <img src="'+popupbox.settings.closeImage+'" title="close" alt="Close" class="close_image" /> \
                   </a> \
                 </div> \
               </td> \

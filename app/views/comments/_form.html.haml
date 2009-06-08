@@ -8,8 +8,6 @@
     = render :partial => "forms/errors", :locals => { :f => f }
     %p= f.label :body, "Comment body:"
     %p= textile_editor :comment, :body, :rows => 9, :cols => 70
-    = observe_field :comment_body, { :url => { :controller => :ajax, :action => :textiled_preview }, :frequency => 1, :update => :preview, :with => 'q' }
-    %p
-      #preview
+    = render :partial => "forms/textiled_preview_button", :locals => { :preview_source => :comment_body }
     %p= render :partial => "forms/textile_info"
     %p= f.submit submit_txt, :onclick => "put_loading_message();"

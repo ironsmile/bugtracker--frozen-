@@ -30,6 +30,26 @@ function hide_element(eid){
     e.hide();
 }
 
+function init_preview_popup(){
+  if( popupbox._preview ){
+     popupbox._preview = false;
+    popupbox.close();
+    return;
+  }
+  popupbox._preview = true;
+
+  popupbox.display("");
+  var clsbtn = $$("#popupbox .close")[0];
+  var content = $$("#popupbox .content")[0];
+  content.id = "popup_preview";
+  content.setStyle({ width : "700px" });
+  Event.stopObserving(clsbtn, 'click');
+  clsbtn.observe('click', function(e){
+    popupbox.inited = false;
+    popupbox._preview = false;
+    $('popupbox').remove();
+  });
+}
 
 Element.addMethods({
 

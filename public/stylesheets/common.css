@@ -6,8 +6,12 @@
   font-family: Helvetica, sans-serif, Arial, "Arial-Narrow";
 }
 
-ol{
-  margin:0 1em;
+ol, ul{
+  margin:0 1.3em;
+}
+
+ins{
+  color: green;
 }
 
 body{

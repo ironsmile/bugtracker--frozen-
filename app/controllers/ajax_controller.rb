@@ -3,6 +3,8 @@ class AjaxController < ApplicationController
   skip_before_filter :authenticate, :only => [ :check_username, :check_email ]
   skip_after_filter :save_last_visited_page
   
+  layout nil
+  
   def check_username
     valid_user_field( User::USERNAME_REGEXP, User.find_by_username(params[:q]) )
   end
@@ -16,7 +18,7 @@ class AjaxController < ApplicationController
   end
   
   private
-  
+
   def valid_user_field(regexp, found_user)
     @valid = (params[:q] =~ regexp and found_user.nil?)
     respond_to do |format|

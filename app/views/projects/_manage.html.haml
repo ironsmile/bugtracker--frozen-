@@ -17,6 +17,7 @@
             %p= f.text_field :name
             %p.label= f.label :description, "Short description of the project:"
             %p= textile_editor :project, :description, :rows => 12, :cols => 45
+            = render :partial => "forms/textiled_preview_button", :locals => { :preview_source => :project_description }
             %p= render :partial => "forms/textile_info"
             %p= f.submit view_type
           %td

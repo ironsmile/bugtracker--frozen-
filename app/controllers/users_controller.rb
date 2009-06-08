@@ -61,9 +61,16 @@ class UsersController < ApplicationController
       if hash_string(others[:old_password]) != @user.password
         @notice_type = :error
         @notice = "Wrong old password!"
-      elsif not (others[:new_password].nil? or 
+      elsif ( others[:new_password].empty? and not params[:user][:email].empty? )
+        if hash_string(others[:old_password]) == @user.password
+          @notice = "Email changed successfully"
+        else
+          @notice = "Wrong password!"
+          @notice_type = :error
+        end
+      elsif (not (others[:new_password].nil? or 
                 others[:new_password].empty? or 
-                others[:new_password] != others[:new_password_confirm])
+                others[:new_password] != others[:new_password_confirm]) )
         @user.password = hash_string( others[:new_password] )
       else
         @notice_type = :error

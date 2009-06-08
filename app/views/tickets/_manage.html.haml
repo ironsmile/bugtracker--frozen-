@@ -17,6 +17,7 @@
       %p= f.text_field :name
       %p.label= f.label :description, "Description:"
       %p= textile_editor :ticket, :description, :rows => 9, :cols => 70
+      = render :partial => "forms/textiled_preview_button", :locals => { :preview_source => :ticket_description }
       %p= render :partial => "forms/textile_info"
       %p
         = f.label :status_id, "Status:"
