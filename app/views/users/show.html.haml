@@ -1,4 +1,8 @@
 %h2 User Profile
+- if @logged_user.admin? or @user == @logged_user
+  .control
+    = "[ #{link_to( "edit", edit_user_path(@user) )} ]"
+    = "[ #{link_to 'Destroy', @user, :confirm => "Are you sure you want to destroy #{@user.name}?", :method => :delete} ]"  
 .show_user
   .pic= avatar_for @user
   .info
@@ -6,7 +10,9 @@
     %p= @user.username
     %h3 Full Name:
     %p= @user.name
-  - if @logged_user.admin? or @user == @logged_user
-    .control
-      = "[ #{link_to( "edit", edit_user_path(@user) )} ]"
-      = "[ #{link_to 'Destroy', @user, :confirm => "Are you sure you want to destroy #{@user.name}?", :method => :delete} ]"
+    %h3 Group:
+    - if @user.group
+      %p= @user.group.name
+    - else
+      %p No group
+      

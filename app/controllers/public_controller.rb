@@ -17,7 +17,7 @@ class PublicController < ApplicationController
         user.login!(session)
         flash[:notice] = "Successfully logged in!"
         if params[:remember_me]
-          auth_token = hash_string("#{@user.password}#{user.username}#{Time.now}")
+          auth_token = hash_string("#{@user.password}#{user.username}")
           user.persistent_login = auth_token
           user.save!
           cookies[:remembered_user] = { :value => auth_token, :expires => 42.months.from_now }
@@ -36,9 +36,8 @@ class PublicController < ApplicationController
 	end
   
   def logout
-    unless cookies[:remembered_user].nil? # we trash the permenent login only on logout of the machine on which it is created for!
-      @logged_user.persistent_login = nil
-      @logged_user.save!
+    # we trash the permenent login only on logout of the machine on which it is created for!
+    unless cookies[:remembered_user].nil?
       cookies.delete(:remembered_user)
     end
     User.log_out!(session)

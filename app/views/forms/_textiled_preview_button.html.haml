@@ -1,2 +1,2 @@
-%a{ :href => "javascript:void(0)", :onclick => "init_preview_popup();$('#{preview_source}').value+=' ';" } Preview
+%input{ :type => "button", :value => "Dynamic preview", :onclick => "init_preview_popup();$('#{preview_source}').value+=' ';" }
 = observe_field preview_source, { :frequency => 1, :function => "if(!$('popup_preview')) return false; new Ajax.Updater('popup_preview', '"+url_for(:controller => :ajax, :action => :textiled_preview)+"', {asynchronous:true, evalScripts:false, parameters:'q=' + encodeURIComponent(value)+'&authenticity_token='+'#{form_authenticity_token}'})" }  

@@ -76,7 +76,7 @@ end
 Haml::Template.options[:preserve] = %w[code pre textarea]
 ActiveSupport::CoreExtensions::Time::Conversions::DATE_FORMATS.merge!(
   {
-    :default => '%d-%m-%Y %H:%M:%S',
+    :default => '%H:%M on %d %b %Y',
     :rss => '%a, %d %b %Y %H:%M:%S %z'
   })
 

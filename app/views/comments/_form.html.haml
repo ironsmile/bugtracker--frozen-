@@ -2,12 +2,15 @@
   %legend Your comment
   - action = @ticket ? [@ticket.project, @ticket, @ticket.comments.new] : [ @comment.ticket.project, @comment.ticket, @comment ]
   - submit_txt = @ticket ? "Comment" : "Edit"
+  - user_id = @comment ? @comment.user_id : @logged_user.id # to make sure it does not get the editor's id
   - remote_form_for action  do |f|
     = f.hidden_field :ticket_id
-    = f.hidden_field :user_id, :value => @logged_user.id
+    = f.hidden_field :user_id, :value => user_id
     = render :partial => "forms/errors", :locals => { :f => f }
     %p= f.label :body, "Comment body:"
     %p= textile_editor :comment, :body, :rows => 9, :cols => 70
-    = render :partial => "forms/textiled_preview_button", :locals => { :preview_source => :comment_body }
+    
     %p= render :partial => "forms/textile_info"
-    %p= f.submit submit_txt, :onclick => "put_loading_message();"
+    %p
+      = f.submit submit_txt, :onclick => "put_loading_message();"
+      = render :partial => "forms/textiled_preview_button", :locals => { :preview_source => :comment_body }

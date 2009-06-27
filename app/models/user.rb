@@ -3,7 +3,6 @@ class User < ActiveRecord::Base
   USERNAME_MIN_SIZE = 5
   USERNAME_REGEXP = Regexp.new("^[a-z0-9_]{#{USERNAME_MIN_SIZE},}$",true)
   EMAIL_REGEXP = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
-  ADMIN = 2 # to be checked with the user_type_id
   
   validates_format_of :email, 
                       :with => EMAIL_REGEXP
@@ -18,6 +17,7 @@ class User < ActiveRecord::Base
   
   has_many :comments
   has_many :tickets
+  belongs_to :group
   
   before_destroy :destroy_cascade
   
@@ -34,7 +34,8 @@ class User < ActiveRecord::Base
   end
   
   def admin?
-    self.user_type_id == ADMIN
+#     self.user_type_id == ADMIN
+      self.group and self.group.name == "Admins"
   end
   
   def name
@@ -54,8 +55,9 @@ class User < ActiveRecord::Base
 private
   
   def destroy_cascade
-    comments.each{ |c| c.destroy }
-    tickets.each{ |c| c.destroy }
+    fn = lambda { |a| a.user_id = nil; a.save }
+    comments.each{ |c| fn.call[c] }
+    tickets.each{ |t| fn.call[t] }
   end
   
 end

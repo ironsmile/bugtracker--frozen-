@@ -1,20 +1,26 @@
 - @counter ||= 0
 %div.comment{ :id => "comment_#{comment.id}", :class => (@counter.even? ? "even":"odd") }
   .comment_heading
-    - user = User.find(comment.user) # comment.user.admin? - undefined function
-    %p{ :class => (user.admin? ? "admin":"") }= link_to h(user.name), user
-    - if user.admin?
-      %p.time admin
-    = avatar_for user
-    - if @logged_user.admin? or @logged_user.id == user.id
+    - if comment.user
+      - user = User.find(comment.user) # comment.user.admin? - undefined function
+      %p{ :class => (user.admin? ? "admin":"") }= link_to h(user.name), user
+      - if user.group
+        %p.time
+          Group:
+          = user.group.name
+      = avatar_for user
+    - else
+      %p User deleted
+    - if @logged_user.admin? or ( user and @logged_user.id == user.id ) # after the 'or' - making sure the comment is not from a deleted user and it belongs to the logged user
       %p.controls= link_to "edit", edit_project_ticket_comment_path(comment.ticket.project, comment.ticket, comment)
     %p.time
-      Posted at
-      = h(comment.created_at)
+      Posted 
+      = render_time comment.created_at
+      ago
     - if comment.updated_at != comment.created_at
       %p.time
-        Edited
-        = time_ago_in_words comment.updated_at
+        Last edited
+        = render_time comment.updated_at
         ago
   .comment_body~ textile_this comment.body
   .clearer

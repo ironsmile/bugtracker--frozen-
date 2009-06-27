@@ -204,3 +204,7 @@ function getPageHeight() {
   } 
   return windowHeight
 }
+
+// well... hate it :)
+popupbox.settings.loadingImage = SITE_ROOT + popupbox.settings.loadingImage;
+popupbox.settings.closeImage = SITE_ROOT + popupbox.settings.closeImage;

@@ -1,5 +1,5 @@
-page.call "hide_loading_message"
 page.call "hide_notices"
+page.call "LoadingMessage.hide"
 
 unless @notice.nil?
   type = @notice_type || :notice

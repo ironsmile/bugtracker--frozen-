@@ -36,7 +36,7 @@ input[type=text], input[type=password], textarea{
   -moz-border-radius: 5px;
 }
 
-input[type=submit]{
+input[type=submit], input[type=button]{
   padding: 5px; border: 1px solid #425E9C; 
   cursor:pointer;
   -moz-border-radius: 5px;
@@ -133,4 +133,8 @@ div.fieldWithErrors{
 
 div.fieldWithErrors input{
   background-color: yellow;
+}
+
+a.time_in_words{
+  color: inherit;
 }

@@ -1,15 +1,19 @@
 - if ENV["RAILS_ENV"] == "development"
   #debug{ :align=>"center" }
     = debug_info_links
-    %fieldset#params_debug_info.debug_info{:style=>"display:none"}
-      %legend params
-      = debug(params)
-    %fieldset#session_debug_info.debug_info{:style=>"display:none"}
-      %legend session
-      = debug session.data
-    %fieldset#env_debug_info.debug_info{:style=>"display:none"}
-      %legend env
-      = debug(request.env)
-    %fieldset#request_debug_info.debug_info{:style=>"display:none"}
-      %legend request
-      = debug(request)
+    #params_debug_info{:style=>"display:none"}
+      %fieldset.debug_info
+        %legend params
+        = debug(params)
+    #session_debug_info{:style=>"display:none"}
+      %fieldset.debug_info
+        %legend session
+        = debug session.data
+    #env_debug_info{:style=>"display:none"}
+      %fieldset.debug_info
+        %legend env
+        = debug(request.env)
+    #request_debug_info{:style=>"display:none"}
+      %fieldset.debug_info
+        %legend request
+        = debug(request)

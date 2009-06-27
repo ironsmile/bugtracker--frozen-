@@ -1,6 +1,42 @@
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
 
+//
+//  This object controls the loading message at the top-right (currently) corner
+//
+LoadingMessage = {
+  messages : 0,
+  inited : false,
+  
+  init : function(){
+    LoadingMessage.inited = true;
+    var lmt = new Element("p").update("Loading");
+    var lmimg = new Image()
+    lmimg.src = SITE_ROOT+"images/progress_active.gif"
+    var lmp = new Element("p").appendChild( lmimg );
+    var lmd = new Element("div", { id : 'loading_message' }).update( lmt ).insert( lmp )
+    $(document.body).appendChild(lmd)
+  },
+  
+  show : function(){
+    if( !LoadingMessage.inited ){
+      LoadingMessage.init()
+    } else if ( LoadingMessage.messages < 1 ){
+      $('loading_message').show();
+    }
+    LoadingMessage.messages += 1;
+  },
+  
+  hide : function(){
+    LoadingMessage.messages -= 1;
+    if( LoadingMessage.messages < 1 ){
+      $('loading_message').hide();
+      LoadingMessage.messages = 0;
+    }
+  }
+}
+
+
 // for the forms
 function put_ajax_loading_img(el_id,image_path){
   var e = $(el_id);
@@ -8,15 +44,12 @@ function put_ajax_loading_img(el_id,image_path){
   e.update("<img src='"+image_path+"' alt='loading...' title='loading...' />")
 }
 
-function put_loading_message(){
-//   hide_notices(); // not needed anymore with the fixed-position message
-  var e = null;
-  if( e = $("loading_message") )
-    e.show();
+function put_loading_message(){ // kept for backward compability
+  LoadingMessage.show();
 }
 
-function hide_loading_message(){
-  hide_element("loading_message");
+function hide_loading_message(){ // kept for backward compability
+  LoadingMessage.hide();
 }
 
 function hide_notices(){
@@ -32,7 +65,7 @@ function hide_element(eid){
 
 function init_preview_popup(){
   if( popupbox._preview ){
-     popupbox._preview = false;
+    popupbox._preview = false;
     popupbox.close();
     return;
   }

@@ -12,6 +12,7 @@ class FeedController < ApplicationController
   end
 
   def project
+    @project = Project.find(params[:id])
   end
 
 

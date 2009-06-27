@@ -13,8 +13,6 @@
     = javascript_include_tag "mover"
     = javascript_include_tag "popupbox"
     :javascript
-      popupbox.settings.loadingImage = SITE_ROOT + popupbox.settings.loadingImage;
-      popupbox.settings.closeImage = SITE_ROOT + popupbox.settings.closeImage;
       document.observe("dom:loaded", function() {
         $$("a[rel*=popupbox]").each(function(a){
           popupbox.forAnchor(a);
@@ -30,9 +28,6 @@
       #user_controls= render :partial => "users/controls", :locals => { :controls => @users }
       .clearer
     #messages
-      #loading_message{ :style => "display:none;" }
-        %p Loading...
-        %p= image_tag "progress_active.gif"
       - if flash[:notice]
         #notice= flash[:notice]
       - else

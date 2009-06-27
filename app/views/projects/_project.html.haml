@@ -3,4 +3,4 @@
   - @ind += 1
   = nav_link h(project.name), project
   .desc= textile_this project.description
-  .bottom= "Created #{time_ago_in_words project.created_at} ago"
+  .bottom= "Created #{render_time project.created_at} ago"

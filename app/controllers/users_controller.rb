@@ -72,6 +72,7 @@ class UsersController < ApplicationController
                 others[:new_password].empty? or 
                 others[:new_password] != others[:new_password_confirm]) )
         @user.password = hash_string( others[:new_password] )
+        @user.persistent_login = nil
       else
         @notice_type = :error
         @notice = "Password confirmation did not match!"

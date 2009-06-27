@@ -1,6 +1,5 @@
-%h3 Metainfo:
 %p
-  Ticked #:
+  Ticked #
   %strong= @ticket.id
   |
   Project:
@@ -9,7 +8,11 @@
 = render :partial => @ticket
 %h3.centred Comments
 = will_paginate @comments
-#comments= render :partial => @comments
+#comments
+  - if @comments and not @comments.empty?
+    = render :partial => @comments
+  - else
+    %p No comments have been made for this ticket
 = will_paginate @comments
 #new_comment_div
   = render :partial => "comments/form"

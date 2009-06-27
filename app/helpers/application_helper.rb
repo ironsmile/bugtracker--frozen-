@@ -39,7 +39,7 @@ module ApplicationHelper
   end
   
   def textile_this(string)
-    string.gsub! /(\{{{\n((.|\n)+?)}}})/ do |match|
+    string.gsub! /(\{\{\{\n((.|\n)+?)\}\}\})/ do |match|
       "\n\n<object><pre class='code'><code>#{$2.gsub!(/\n+/, "\n")}</code></pre></object>\n"
     end
     RedCloth.new(string).to_html
@@ -47,6 +47,10 @@ module ApplicationHelper
   
   def full_url(relative_url)
     SITE_HOST + relative_url
+  end
+  
+  def render_time(t)
+    link_to( time_ago_in_words(t), "javascript:void(0)", {:title => "#{t}", :class=>"time_in_words"} )
   end
   
 end
