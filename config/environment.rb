@@ -17,6 +17,7 @@ Rails::Initializer.run do |config|
   config.gem "activesupport"
   config.gem "RedCloth"
   config.gem 'mislav-will_paginate', :version => '>= 2.2.3', :lib => 'will_paginate', :source => 'http://gems.github.com'
+#   config.gem "paperclip" # using a plugin instead. Made few modifications on it
 
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers

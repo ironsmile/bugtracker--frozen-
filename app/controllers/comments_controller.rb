@@ -18,9 +18,10 @@ class CommentsController < ApplicationController
 #     @comment = Comment.find(params[:id])
     success = @comment.update_attributes(params[:comment])
     respond_to do |format|
+      
       format.js do
         if success
-#           update_ticket(@comment) # we don't want to update the project, do we?
+#           update_ticket_for(@comment) # we don't want to update the project, do we?
           @notice = "Your comment has been updated!"
         else
           @notice = @comment.errors.full_messages
@@ -28,6 +29,16 @@ class CommentsController < ApplicationController
         end
         render :partial => "users/notice"
       end
+      
+      format.html do
+        if success
+          flash[:notice] = "Your comment has been updated!"
+          redirect_to "#{project_ticket_path(@comment.ticket.project, @comment.ticket)}#comment_#{@comment.id}"
+        else
+          render :action => :edit
+        end
+      end
+      
     end
   end
 
@@ -36,7 +47,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new(params[:comment])
     success = @comment.save
     if success
-      update_ticket(@comment)
+      update_ticket_for(@comment)
     end
     respond_to do |format|
       format.html do
@@ -45,7 +56,7 @@ class CommentsController < ApplicationController
         else
           flash[:error] = @comment.errors.full_messages
         end
-        redirect_to project_ticket_path(@comment.ticket.project, @comment.ticket)
+        redirect_to "#{project_ticket_path(@comment.ticket.project, @comment.ticket)}#comment_#{@comment.id}"
       end
       format.js do
         if success
@@ -57,18 +68,19 @@ class CommentsController < ApplicationController
         end
       end
     end
+    
   end
 
-#   def new
-#   end
+  def new
+  end
 # 
   def destroy
-    @flash[:error] = "Comments can't be deleted!"
+    flash[:error] = "Comments can't be deleted!"
   end
 
   private
   
-  def update_ticket(comment)
+  def update_ticket_for(comment)
     comment.ticket.updated_at = Time.now
     comment.ticket.save!
   end

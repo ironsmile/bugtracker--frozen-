@@ -1,34 +1,49 @@
-%h2
-  User Profile -
-  = link_to @user.username, @user
+%h2= link_to @user.username, @user
+User Profile
+
+%fieldset
+  %legend Your avatar
+  = avatar_for @user
+  .help
+    We are using
+    = link_to "Gravatar", "http://www.gravatar.com", { :target => "_blank" }
+    for our avatars.
 
 - remote_form_for( @user, :method => "put" ) do |f|
   .form_wrapper
-    %p.label= f.label :full_name, "Full Name:"
-    %p
-      = f.text_field :full_name
-      = hidden_field "others", "action", :value => "full_name"
-      = f.submit "Change", :onclick => "put_loading_message();"
+    %fieldset
+      %legend Full name
+      %p
+        = f.text_field :full_name
+        = hidden_field "others", "action", :value => "full_name"
+        = f.submit "Change", :onclick => "put_loading_message();"
 
-%h3 Sensitive data
+
 - remote_form_for( @user, :method => "put" ) do |f|
   .form_wrapper
-    = hidden_field "others", "action", :value => "password"
-    %p.label= f.label :email, "Your email:"
-    %p= f.text_field :email
-    %p.label= label "others", "old_password", "Old Password:"
-    %p
-      = password_field "others", "old_password"
-      (required to change your email or password)
-    %p.label= label "others", "new_password", "New password:"
-    %p= password_field "others", "new_password", :value => ""
-    %p.label= label "others", "new_password_confirm", "Repeat the new password:"
-    %p= password_field "others", "new_password_confirm", :value => ""
-    %p= f.submit "Update", :onclick => "put_loading_message();"
+    %fieldset
+      %legend Sensitive data
+      = hidden_field "others", "action", :value => "password"
+      %p.label= f.label :email, "Your email:"
+      %p= f.text_field :email
+      %p.label= label "others", "old_password", "Old Password:"
+      %p
+        = password_field "others", "old_password"
+        (required to change your email or password)
+      %p.label= label "others", "new_password", "New password:"
+      %p= password_field "others", "new_password", :value => ""
+      %p.label= label "others", "new_password_confirm", "Repeat the new password:"
+      %p= password_field "others", "new_password_confirm", :value => ""
+      %p= f.submit "Update", :onclick => "LoadingMessage.show();"
 
-%h3 Your avatar
-= avatar_for @user
-.help
-  We are using
-  = link_to "Gravatar", "http://www.gravatar.com", { :target => "_blank" }
-  for our avatars.
+- if @logged_user.admin?
+  - remote_form_for( @user, :method => "put" ) do |f|
+    .form_wrapper
+      %fieldset
+        %legend Group
+        = hidden_field "others", "action", :value => "group"
+        %p.label
+          = f.label :group_id, "Change to:"
+          = f.select :group_id, Group.find(:all).map{ |g| [ g.name, g.id ] }, {}, { :onchange => "LoadingMessage.show(); $(this).form.onsubmit();" }    
+          %noscript
+            = f.submit "Submit", :onclick => "LoadingMessage.show();"

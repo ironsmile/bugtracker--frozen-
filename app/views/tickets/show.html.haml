@@ -7,13 +7,18 @@
 %h3 Ticket info:
 = render :partial => @ticket
 %h3.centred Comments
-= will_paginate @comments
+
 #comments
   - if @comments and not @comments.empty?
-    = render :partial => @comments
+    = page_entries_info @comments, :entry_name => 'comment'
+    
+    - #paginated_section causes the strangest bug here! http://www.youtube.com/watch?v=h9WkN64maXM
+    = simplier_paginated_section @comments, :previous_label => "<< Newer&nbsp;", :next_label => "&nbsp;Older >>" do
+      = render :partial => @comments
+    
   - else
     %p No comments have been made for this ticket
-= will_paginate @comments
+
 #new_comment_div
   = render :partial => "comments/form"
   

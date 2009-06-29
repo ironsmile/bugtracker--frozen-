@@ -12,12 +12,16 @@
     = javascript_include_tag :defaults
     = javascript_include_tag "mover"
     = javascript_include_tag "popupbox"
+    
     :javascript
       document.observe("dom:loaded", function() {
         $$("a[rel*=popupbox]").each(function(a){
           popupbox.forAnchor(a);
         });
+        // little extra
+        LoadingMessage.init()
       })
+      
     - if %(new edit).include?( controller.action_name ) or ( controller.class == TicketsController and controller.action_name == 'show' )
       = textile_editor_initialize
     - if @rss

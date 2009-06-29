@@ -55,18 +55,21 @@ class UsersController < ApplicationController
 #     sleep(3);
     @user = get_url_user
     others = params[:others]
+    
     if others[:action] == "full_name"
       @notice = "Full name changed to '#{params[:user][:full_name]}' successfully!"
-    else
+      @user.name = params[:user][:full_name]
+      
+    elsif others[:action] == "password"
+      
       if hash_string(others[:old_password]) != @user.password
-        @notice_type = :error
-        @notice = "Wrong old password!"
+        @user.errors.add "Old password"
       elsif ( others[:new_password].empty? and not params[:user][:email].empty? )
         if hash_string(others[:old_password]) == @user.password
           @notice = "Email changed successfully"
+          @user.email = params[:user][:email]
         else
-          @notice = "Wrong password!"
-          @notice_type = :error
+          @user.errors.add "Wrong password!"
         end
       elsif (not (others[:new_password].nil? or 
                 others[:new_password].empty? or 
@@ -74,15 +77,26 @@ class UsersController < ApplicationController
         @user.password = hash_string( others[:new_password] )
         @user.persistent_login = nil
       else
-        @notice_type = :error
-        @notice = "Password confirmation did not match!"
+        @user.errors.add "Password confirmation"
       end
+    
+    elsif others[:action] == "group"
+      
+      if @logged_user.admin?
+        @notice = "Group changed!"
+        @user.group_id = params[:user][:group_id]
+      else
+        @user.errors.add "Only admins can change user's group!"
+      end
+      
+    else
+      @user.errors.add "No such update method!"
     end
     
-    success = (@notice_type != :error) ? @user.update_attributes( params[:user] ) : false
+    success = (@user.errors.empty?) ? @user.save : false
     unless success
       @notice_type = :error
-      @notice ||= @user.errors.full_messages
+      @notice = @user.errors.full_messages
     else
       @notice ||= "Update successful!"
     end

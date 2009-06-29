@@ -116,7 +116,7 @@ popupbox = {
     if( href.match( /#([\w\d]+)$/ ) ){
       popupbox.display( $(href.split("#")[1]).innerHTML );
     }
-    else if ( href.match( /\.(jpe?g|png|gif)$/ ) ){
+    else if ( href.match( /\.(jpe?g|png|gif)$/i ) ){
       popupbox.fillImage(href);
     }
     else {

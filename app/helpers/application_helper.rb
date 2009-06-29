@@ -50,7 +50,7 @@ module ApplicationHelper
   end
   
   def render_time(t)
-    link_to( time_ago_in_words(t), "javascript:void(0)", {:title => "#{t}", :class=>"time_in_words"} )
+    link_to time_ago_in_words(t), "javascript:void(0)", {:title => "#{t}", :class=>"time_in_words"}
   end
   
 end

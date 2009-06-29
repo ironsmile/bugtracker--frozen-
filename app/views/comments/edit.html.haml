@@ -1,2 +1,2 @@
 #edit_comment= render :partial => "form"
-%p= link_to "Back to the ticket", project_ticket_path(@comment.ticket.project, @comment.ticket)
+%p= link_to "Back to the ticket", "#{project_ticket_path(@comment.ticket.project, @comment.ticket)}#comment_#{@comment.id}"

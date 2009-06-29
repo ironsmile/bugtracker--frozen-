@@ -1,16 +1,30 @@
 %fieldset
   %legend Your comment
+  
   - action = @ticket ? [@ticket.project, @ticket, @ticket.comments.new] : [ @comment.ticket.project, @comment.ticket, @comment ]
   - submit_txt = @ticket ? "Comment" : "Edit"
   - user_id = @comment ? @comment.user_id : @logged_user.id # to make sure it does not get the editor's id
-  - remote_form_for action  do |f|
+  
+  - remote_form_for( action, :html => { :multipart => true, :onsubmit => "put_loading_message();if($('others_html_submit').value=='1'){$(this).submit(); return true;}" } ) do |f|
+    = hidden_field :others, :html_submit, :value => "0"
     = f.hidden_field :ticket_id
     = f.hidden_field :user_id, :value => user_id
     = render :partial => "forms/errors", :locals => { :f => f }
     %p= f.label :body, "Comment body:"
     %p= textile_editor :comment, :body, :rows => 9, :cols => 70
-    
+    #comment_attachment
+      %p
+        = f.label :attachment, "Upload attachment:"
+        = f.file_field :attachment, :onchange => "$('others_html_submit').value='1';"
+    - unless @ticket or !@comment.attachment?
+      %p 
+        = image_tag "icon-paper-clip.gif", :alt => "Attachment"
+        = link_to File.basename(@comment.attachment.url), @comment.attachment.url
+      %p
+        = f.label :delete_attachment, "Delete current attachment?"
+        = f.check_box :delete_attachment, :onchange => "javascript:if($('others_html_submit').value=='0'){$('others_html_submit').value = $(this).checked ? '1' : '0'}"
+
     %p= render :partial => "forms/textile_info"
     %p
-      = f.submit submit_txt, :onclick => "put_loading_message();"
+      = f.submit submit_txt
       = render :partial => "forms/textiled_preview_button", :locals => { :preview_source => :comment_body }

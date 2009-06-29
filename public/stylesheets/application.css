@@ -188,3 +188,12 @@ del{
 div.comment_heading p.admin a{
   color: #34C746;
 }
+
+div.attachment{
+  margin-top: 10px;
+  border-top: 1px solid #43659C;
+}
+
+div.attachment a img{
+  border: none;
+}

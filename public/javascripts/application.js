@@ -10,18 +10,19 @@ LoadingMessage = {
   
   init : function(){
     LoadingMessage.inited = true;
-    var lmt = new Element("p").update("Loading");
+    var lmt = new Element("p").update("Loading...");
     var lmimg = new Image()
     lmimg.src = SITE_ROOT+"images/progress_active.gif"
     var lmp = new Element("p").appendChild( lmimg );
-    var lmd = new Element("div", { id : 'loading_message' }).update( lmt ).insert( lmp )
+    var lmd = new Element("div", { id : 'loading_message', style : 'display:none' }).update( lmt ).insert( lmp )
     $(document.body).appendChild(lmd)
   },
   
   show : function(){
     if( !LoadingMessage.inited ){
       LoadingMessage.init()
-    } else if ( LoadingMessage.messages < 1 ){
+    }
+    if ( LoadingMessage.messages < 1 ){
       $('loading_message').show();
     }
     LoadingMessage.messages += 1;
@@ -35,7 +36,6 @@ LoadingMessage = {
     }
   }
 }
-
 
 // for the forms
 function put_ajax_loading_img(el_id,image_path){
