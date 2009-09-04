@@ -3,10 +3,6 @@ module ApplicationHelper
   
   require 'digest/md5'
 
-  HASH_SALT = 42
-  SITE_HOST = "http://192.168.1.2"
-  SITE_URL = "#{SITE_HOST}/bugtracker/"
-
   def debug_info_links
     ["params","session","env","request"].map do |v|
       link_to(v,{},{:href=>"##{v}_debug_info", :rel=> "popupbox"})
@@ -26,7 +22,8 @@ module ApplicationHelper
     !session[:user_id].nil?
   end
   
-  def nav_link( name, opts, htmls = {:tag => 'span', :class => 'active'} )
+  def nav_link( name, opts, htmls = {} )
+    htmls = {:tag => 'span', :class => 'active'}.update(htmls)
     link_to_unless_current( name, opts ){ |n| "<#{htmls[:tag]} class='#{htmls[:class]}'>#{n}</#{htmls[:tag]}>" }
   end
   
@@ -34,7 +31,7 @@ module ApplicationHelper
     "#{request.relative_url_root}/#{file}"
   end
   
-  def image_href(fname)
+  def image_href(fname) # image_tag ! n00b!
     link_to_static("images/#{fname}")
   end
   

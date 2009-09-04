@@ -7,18 +7,23 @@
 %h3 Ticket info:
 = render :partial => @ticket
 %h3.centred Comments
-
-#comments
-  - if @comments and not @comments.empty?
-    = page_entries_info @comments, :entry_name => 'comment'
-    
-    - #paginated_section causes the strangest bug here! http://www.youtube.com/watch?v=h9WkN64maXM
-    = simplier_paginated_section @comments, :previous_label => "<< Newer&nbsp;", :next_label => "&nbsp;Older >>" do
-      = render :partial => @comments
-    
-  - else
-    %p No comments have been made for this ticket
+- if @comments and not @comments.empty?
+  = page_entries_info @comments, :entry_name => 'comment'
+  - #paginated_section causes the strangest bug here! http://www.youtube.com/watch?v=h9WkN64maXM
+  = simplier_paginated_section @comments, :previous_label => "<< Newer&nbsp;", :next_label => "&nbsp;Older >>" do
+    #comments= render :partial => @comments
+- else
+  %p No comments have been made for this ticket
 
 #new_comment_div
   = render :partial => "comments/form"
+
+#new_comments_notice{ :style => "display: none" }
+  #new_comments_notice_text No new comments
+  %a{ :href=>"javascript:void(0);", :onclick=>"new Ajax.Request( '#{url_for :controller=>:ajax, :action=>:refresh_comments, :id=>@ticket.id}', { method: 'get', parameters: { d: new_comments_last_refresh } } )" } Refresh
   
+#ajax_log{ :style => "display: none" }
+
+- if not params[:page].nil? and params[:page].to_i == 1
+  =javascript_tag "var new_comments_last_refresh = #{Time.now.to_i}; var nc_per_updater = null;"
+  =javascript_tag "function start_looking(){ nc_per_updater = new Ajax.PeriodicalUpdater('ajax_log', '#{url_for :controller=>:ajax, :action=>:new_comments_check, :id=>@ticket.id}', {method: 'get', frequency: 10, decay: 1.1, evalScripts: true, parameters: {d:new_comments_last_refresh} }); }; start_looking()"

@@ -56,7 +56,7 @@ popupbox = {
     preload[0].src = popupbox.settings.closeImage
     preload[1].src = popupbox.settings.loadingImage
     
-    if( Mover && Mover.init ){
+    if( typeof( window[ 'Mover' ] ) != "undefined" && Mover.init ){
       $$("#popupbox ."+popupbox.settings.moveHandlerClass).each(function(item){
         Mover.init(item, 'popupbox');
       });

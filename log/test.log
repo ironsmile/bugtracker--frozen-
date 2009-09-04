@@ -8157,3 +8157,1193 @@ Processing UsersController#edit (for 0.0.0.0 at 2009-06-10 18:01:31) [GET]
   [4;35;1mUser Load (0.000116)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 837709629) [0m
   [4;36;1mUser Load (0.000092)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` IS NULL) LIMIT 1[0m
   [4;35;1mSQL (0.000504)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000071)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000056)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000035)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000037)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000036)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000036)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000036)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000036)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000036)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000037)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000036)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000037)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000036)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000036)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000036)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000037)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000036)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000036)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000037)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000039)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000037)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000174)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+  [4;36;1mSQL (0.000059)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000038)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000036)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.000078)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000053)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000035)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000031)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000028)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000031)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000030)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000030)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000028)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000184)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+
+
+Processing PublicController#login (for 0.0.0.0 at 2009-09-05 01:10:43) [POST]
+  Session ID: 
+  Parameters: {"action"=>"login", "controller"=>"public", "user"=>{"username"=>"petko", "password"=>"1234"}}
+  [4;36;1mConfiguration Load (0.000127)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;35;1mUser Load (0.000111)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'petko' AND `users`.`password` = '0b6067cfd4f9dd7aef06f7234b8096cb') LIMIT 1[0m
+Redirected to http://test.host/
+Completed in 0.00395 (253 reqs/sec) | DB: 0.01283 (324%) | 302 Found [http://test.host/public/login?user%5Bpassword%5D=1234&user%5Busername%5D=petko]
+  [4;36;1mSQL (0.000047)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000028)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000041)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+
+
+Processing PublicController#login (for 0.0.0.0 at 2009-09-05 01:10:43) [POST]
+  Session ID: 
+  Parameters: {"action"=>"login", "controller"=>"public", "user"=>{"username"=>"petko", "password"=>"everything but petko's"}}
+  [4;35;1mConfiguration Load (0.000039)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;36;1mUser Load (0.000169)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'petko' AND `users`.`password` = '0c9de598b424f68250d2bc48372bb57b') LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;36;1mUser Load (0.000112)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`password` = '0c9de598b424f68250d2bc48372bb57b' AND `users`.`email` = 'petko') LIMIT 1[0m
+Redirected to http://test.host/public/login
+Completed in 0.00203 (491 reqs/sec) | DB: 0.00044 (21%) | 302 Found [http://test.host/public/login?user%5Bpassword%5D=everything+but+petko%27s&user%5Busername%5D=petko]
+  [4;35;1mSQL (0.000038)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000030)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000044)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-09-05 01:10:43) [POST]
+  Session ID: 
+  Parameters: {"others"=>{"pass_confirm"=>"secret"}, "action"=>"create", "controller"=>"users", "user"=>{"username"=>"gosheto", "password"=>"secret", "email"=>"gosheto@somewhere.here"}}
+  [4;36;1mConfiguration Load (0.000041)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;35;1mSQL (0.000108)[0m   [0mSELECT `email` FROM `users` WHERE (`users`.email = 'gosheto@somewhere.here') [0m
+  [4;36;1mSQL (0.000081)[0m   [0;1mSELECT `username` FROM `users` WHERE (`users`.username = 'gosheto') [0m
+  [4;35;1mUser Create (0.000131)[0m   [0mINSERT INTO `users` (`persistent_login`, `created_at`, `updated_at`, `username`, `group_id`, `full_name`, `password`, `email`) VALUES(NULL, '2009-09-04 22:10:43', '2009-09-04 22:10:43', 'gosheto', NULL, NULL, '1e880de92982018ab2a58492854e091e', 'gosheto@somewhere.here')[0m
+Redirected to http://test.host/
+Completed in 0.00418 (239 reqs/sec) | DB: 0.00053 (12%) | 302 Found [http://test.host/users?others%5Bpass_confirm%5D=secret&user%5Bemail%5D=gosheto%40somewhere.here&user%5Bpassword%5D=secret&user%5Busername%5D=gosheto]
+  [4;36;1mConfiguration Load (0.000039)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;35;1mUser Load (0.000106)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'gosheto' AND `users`.`password` = '1e880de92982018ab2a58492854e091e') LIMIT 1[0m
+  [4;36;1mConfiguration Load (0.000038)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;35;1mSQL (0.000725)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000028)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000114)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-09-05 01:10:43) [POST]
+  Session ID: 
+  Parameters: {"others"=>{"pass_confirm"=>"secret"}, "action"=>"create", "controller"=>"users", "user"=>{"username"=>"gosheto", "password"=>"", "email"=>"gosheto@somewhere.here"}}
+Rendering template within layouts/public
+Rendering users/new
+Rendered forms/_errors (0.00040)
+Rendered public/_navigation (0.00119)
+Rendered public/_debug_info (0.00002)
+Completed in 0.01769 (56 reqs/sec) | Rendering: 0.01717 (97%) | DB: 0.00105 (5%) | 200 OK [http://test.host/users?others%5Bpass_confirm%5D=secret&user%5Bemail%5D=gosheto%40somewhere.here&user%5Bpassword%5D=&user%5Busername%5D=gosheto]
+  [4;36;1mUser Load (0.000197)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'gosheto') LIMIT 1[0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-09-05 01:10:43) [POST]
+  Session ID: 
+  Parameters: {"others"=>{"pass_confirm"=>"secret"}, "action"=>"create", "controller"=>"users", "user"=>{"username"=>"gosheto", "password"=>"not a secret", "email"=>"gosheto@somewhere.here"}}
+Rendering template within layouts/public
+Rendering users/new
+Rendered forms/_errors (0.00038)
+Rendered public/_navigation (0.00076)
+Rendered public/_debug_info (0.00002)
+Completed in 0.00543 (183 reqs/sec) | Rendering: 0.00489 (89%) | DB: 0.00020 (3%) | 200 OK [http://test.host/users?others%5Bpass_confirm%5D=secret&user%5Bemail%5D=gosheto%40somewhere.here&user%5Bpassword%5D=&user%5Busername%5D=gosheto]
+  [4;35;1mUser Load (0.000059)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'gosheto') LIMIT 1[0m
+  [4;36;1mSQL (0.000052)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000029)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000042)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+
+
+Processing UsersController#edit (for 0.0.0.0 at 2009-09-05 01:10:43) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"petko", "controller"=>"users"}
+Redirected to http://test.host/public/login
+Filter chain halted as [:authenticate] rendered_or_redirected.
+Completed in 0.00029 (3495 reqs/sec) | DB: 0.00018 (63%) | 302 Found [http://test.host/users/petko/edit]
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-09-05 01:10:43) [POST]
+  Session ID: 
+  Parameters: {"others"=>{"pass_confirm"=>"secret"}, "action"=>"create", "controller"=>"users", "user"=>{"username"=>"gosheto", "password"=>"secret", "email"=>"gosheto@somewhere.here"}}
+  [4;35;1mConfiguration Load (0.000046)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;36;1mSQL (0.000145)[0m   [0;1mSELECT `email` FROM `users` WHERE (`users`.email = 'gosheto@somewhere.here') [0m
+  [4;35;1mSQL (0.000078)[0m   [0mSELECT `username` FROM `users` WHERE (`users`.username = 'gosheto') [0m
+  [4;36;1mUser Create (0.000116)[0m   [0;1mINSERT INTO `users` (`persistent_login`, `created_at`, `updated_at`, `username`, `group_id`, `full_name`, `password`, `email`) VALUES(NULL, '2009-09-04 22:10:43', '2009-09-04 22:10:43', 'gosheto', NULL, NULL, '1e880de92982018ab2a58492854e091e', 'gosheto@somewhere.here')[0m
+Redirected to http://test.host/
+Completed in 0.00274 (364 reqs/sec) | DB: 0.00038 (14%) | 302 Found [http://test.host/users/petko/edit]
+
+
+Processing UsersController#edit (for 0.0.0.0 at 2009-09-05 01:10:43) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Load (0.000115)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 837709629) [0m
+  [4;36;1mUser Load (0.000090)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.000501)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000071)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000044)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000026)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000028)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000026)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000026)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000026)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000026)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000026)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000028)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000026)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000158)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+  [4;36;1mSQL (0.000044)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000027)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.000066)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000043)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000026)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000033)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000028)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000030)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000028)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000031)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000031)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000168)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+
+
+Processing PublicController#login (for 0.0.0.0 at 2009-09-05 01:12:20) [POST]
+  Session ID: 
+  Parameters: {"action"=>"login", "controller"=>"public", "user"=>{"username"=>"petko", "password"=>"1234"}}
+  [4;36;1mConfiguration Load (0.000148)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;35;1mUser Load (0.000114)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'petko' AND `users`.`password` = '0b6067cfd4f9dd7aef06f7234b8096cb') LIMIT 1[0m
+Redirected to http://test.host/
+Completed in 0.00607 (164 reqs/sec) | DB: 0.01241 (204%) | 302 Found [http://test.host/public/login?user%5Bpassword%5D=1234&user%5Busername%5D=petko]
+  [4;36;1mSQL (0.000048)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000029)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000042)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+
+
+Processing PublicController#login (for 0.0.0.0 at 2009-09-05 01:12:20) [POST]
+  Session ID: 
+  Parameters: {"action"=>"login", "controller"=>"public", "user"=>{"username"=>"petko", "password"=>"everything but petko's"}}
+  [4;35;1mConfiguration Load (0.000039)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;36;1mUser Load (0.000108)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'petko' AND `users`.`password` = '0c9de598b424f68250d2bc48372bb57b') LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;36;1mUser Load (0.000113)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`password` = '0c9de598b424f68250d2bc48372bb57b' AND `users`.`email` = 'petko') LIMIT 1[0m
+Redirected to http://test.host/public/login
+Completed in 0.00200 (500 reqs/sec) | DB: 0.00038 (18%) | 302 Found [http://test.host/public/login?user%5Bpassword%5D=everything+but+petko%27s&user%5Busername%5D=petko]
+  [4;35;1mSQL (0.000039)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000032)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000045)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-09-05 01:12:20) [POST]
+  Session ID: 
+  Parameters: {"others"=>{"pass_confirm"=>"secret"}, "action"=>"create", "controller"=>"users", "user"=>{"username"=>"gosheto", "password"=>"secret", "email"=>"gosheto@somewhere.here"}}
+  [4;36;1mConfiguration Load (0.000044)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;35;1mSQL (0.000123)[0m   [0mSELECT `email` FROM `users` WHERE (`users`.email = 'gosheto@somewhere.here') [0m
+  [4;36;1mSQL (0.000080)[0m   [0;1mSELECT `username` FROM `users` WHERE (`users`.username = 'gosheto') [0m
+  [4;35;1mUser Create (0.000132)[0m   [0mINSERT INTO `users` (`persistent_login`, `created_at`, `updated_at`, `username`, `group_id`, `full_name`, `password`, `email`) VALUES(NULL, '2009-09-04 22:12:20', '2009-09-04 22:12:20', 'gosheto', NULL, NULL, '1e880de92982018ab2a58492854e091e', 'gosheto@somewhere.here')[0m
+Redirected to http://test.host/
+Completed in 0.00599 (167 reqs/sec) | DB: 0.00055 (9%) | 302 Found [http://test.host/users?others%5Bpass_confirm%5D=secret&user%5Bemail%5D=gosheto%40somewhere.here&user%5Bpassword%5D=secret&user%5Busername%5D=gosheto]
+  [4;36;1mConfiguration Load (0.000039)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;35;1mUser Load (0.000105)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'gosheto' AND `users`.`password` = '1e880de92982018ab2a58492854e091e') LIMIT 1[0m
+  [4;36;1mConfiguration Load (0.000037)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;35;1mSQL (0.000503)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000029)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000098)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-09-05 01:12:20) [POST]
+  Session ID: 
+  Parameters: {"others"=>{"pass_confirm"=>"secret"}, "action"=>"create", "controller"=>"users", "user"=>{"username"=>"gosheto", "password"=>"", "email"=>"gosheto@somewhere.here"}}
+Rendering template within layouts/public
+Rendering users/new
+Rendered forms/_errors (0.00040)
+Rendered public/_navigation (0.00123)
+Rendered public/_debug_info (0.00002)
+Completed in 0.01558 (64 reqs/sec) | Rendering: 0.01508 (96%) | DB: 0.00081 (5%) | 200 OK [http://test.host/users?others%5Bpass_confirm%5D=secret&user%5Bemail%5D=gosheto%40somewhere.here&user%5Bpassword%5D=&user%5Busername%5D=gosheto]
+  [4;36;1mUser Load (0.000204)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'gosheto') LIMIT 1[0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-09-05 01:12:20) [POST]
+  Session ID: 
+  Parameters: {"others"=>{"pass_confirm"=>"secret"}, "action"=>"create", "controller"=>"users", "user"=>{"username"=>"gosheto", "password"=>"not a secret", "email"=>"gosheto@somewhere.here"}}
+Rendering template within layouts/public
+Rendering users/new
+Rendered forms/_errors (0.00038)
+Rendered public/_navigation (0.00076)
+Rendered public/_debug_info (0.00002)
+Completed in 0.00547 (182 reqs/sec) | Rendering: 0.00493 (90%) | DB: 0.00020 (3%) | 200 OK [http://test.host/users?others%5Bpass_confirm%5D=secret&user%5Bemail%5D=gosheto%40somewhere.here&user%5Bpassword%5D=&user%5Busername%5D=gosheto]
+  [4;35;1mUser Load (0.000054)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'gosheto') LIMIT 1[0m
+  [4;36;1mSQL (0.000052)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000029)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000042)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+
+
+Processing UsersController#edit (for 0.0.0.0 at 2009-09-05 01:12:20) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"petko", "controller"=>"users"}
+Redirected to http://test.host/public/login
+Filter chain halted as [:authenticate] rendered_or_redirected.
+Completed in 0.00028 (3509 reqs/sec) | DB: 0.00018 (62%) | 302 Found [http://test.host/users/petko/edit]
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-09-05 01:12:20) [POST]
+  Session ID: 
+  Parameters: {"others"=>{"pass_confirm"=>"secret"}, "action"=>"create", "controller"=>"users", "user"=>{"username"=>"gosheto", "password"=>"secret", "email"=>"gosheto@somewhere.here"}}
+  [4;35;1mConfiguration Load (0.000041)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;36;1mSQL (0.000144)[0m   [0;1mSELECT `email` FROM `users` WHERE (`users`.email = 'gosheto@somewhere.here') [0m
+  [4;35;1mSQL (0.000078)[0m   [0mSELECT `username` FROM `users` WHERE (`users`.username = 'gosheto') [0m
+  [4;36;1mUser Create (0.000124)[0m   [0;1mINSERT INTO `users` (`persistent_login`, `created_at`, `updated_at`, `username`, `group_id`, `full_name`, `password`, `email`) VALUES(NULL, '2009-09-04 22:12:20', '2009-09-04 22:12:20', 'gosheto', NULL, NULL, '1e880de92982018ab2a58492854e091e', 'gosheto@somewhere.here')[0m
+Redirected to http://test.host/
+Completed in 0.00278 (359 reqs/sec) | DB: 0.00039 (13%) | 302 Found [http://test.host/users/petko/edit]
+
+
+Processing UsersController#edit (for 0.0.0.0 at 2009-09-05 01:12:20) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Load (0.000118)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 837709629) [0m
+  [4;36;1mUser Load (0.000090)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.000503)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000065)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000042)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000028)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000028)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000028)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000028)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000028)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000028)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000029)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000140)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+  [4;36;1mSQL (0.000043)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000028)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.000069)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000042)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000035)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000043)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000037)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000046)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000037)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000040)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000036)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000044)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000036)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000220)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+
+
+Processing PublicController#login (for 0.0.0.0 at 2009-09-05 01:16:32) [POST]
+  Session ID: 
+  Parameters: {"action"=>"login", "controller"=>"public", "user"=>{"username"=>"petko", "password"=>"1234"}}
+  [4;36;1mConfiguration Load (0.000181)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;35;1mUser Load (0.000148)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'petko' AND `users`.`password` = '0b6067cfd4f9dd7aef06f7234b8096cb') LIMIT 1[0m
+Redirected to http://test.host/
+Completed in 0.00524 (190 reqs/sec) | DB: 0.01485 (283%) | 302 Found [http://test.host/public/login?user%5Bpassword%5D=1234&user%5Busername%5D=petko]
+  [4;36;1mSQL (0.000061)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000037)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000056)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+
+
+Processing PublicController#login (for 0.0.0.0 at 2009-09-05 01:16:32) [POST]
+  Session ID: 
+  Parameters: {"action"=>"login", "controller"=>"public", "user"=>{"username"=>"petko", "password"=>"everything but petko's"}}
+  [4;35;1mConfiguration Load (0.000053)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;36;1mUser Load (0.000155)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'petko' AND `users`.`password` = '0c9de598b424f68250d2bc48372bb57b') LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;36;1mUser Load (0.000148)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`password` = '0c9de598b424f68250d2bc48372bb57b' AND `users`.`email` = 'petko') LIMIT 1[0m
+Redirected to http://test.host/public/login
+Completed in 0.00362 (276 reqs/sec) | DB: 0.00051 (14%) | 302 Found [http://test.host/public/login?user%5Bpassword%5D=everything+but+petko%27s&user%5Busername%5D=petko]
+  [4;35;1mSQL (0.000054)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000036)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000040)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000036)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000059)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-09-05 01:16:32) [POST]
+  Session ID: 
+  Parameters: {"others"=>{"pass_confirm"=>"secret"}, "action"=>"create", "controller"=>"users", "user"=>{"username"=>"gosheto", "password"=>"secret", "email"=>"gosheto@somewhere.here"}}
+  [4;36;1mConfiguration Load (0.000054)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;35;1mSQL (0.000160)[0m   [0mSELECT `email` FROM `users` WHERE (`users`.email = 'gosheto@somewhere.here') [0m
+  [4;36;1mSQL (0.000107)[0m   [0;1mSELECT `username` FROM `users` WHERE (`users`.username = 'gosheto') [0m
+  [4;35;1mUser Create (0.000165)[0m   [0mINSERT INTO `users` (`persistent_login`, `created_at`, `updated_at`, `username`, `group_id`, `full_name`, `password`, `email`) VALUES(NULL, '2009-09-04 22:16:32', '2009-09-04 22:16:32', 'gosheto', NULL, NULL, '1e880de92982018ab2a58492854e091e', 'gosheto@somewhere.here')[0m
+Redirected to http://test.host/
+Completed in 0.00542 (184 reqs/sec) | DB: 0.00071 (13%) | 302 Found [http://test.host/users?others%5Bpass_confirm%5D=secret&user%5Bemail%5D=gosheto%40somewhere.here&user%5Bpassword%5D=secret&user%5Busername%5D=gosheto]
+  [4;36;1mConfiguration Load (0.000052)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;35;1mUser Load (0.000138)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'gosheto' AND `users`.`password` = '1e880de92982018ab2a58492854e091e') LIMIT 1[0m
+  [4;36;1mConfiguration Load (0.000051)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;35;1mSQL (0.000528)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000039)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.001047)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-09-05 01:16:32) [POST]
+  Session ID: 
+  Parameters: {"others"=>{"pass_confirm"=>"secret"}, "action"=>"create", "controller"=>"users", "user"=>{"username"=>"gosheto", "password"=>"", "email"=>"gosheto@somewhere.here"}}
+Rendering template within layouts/public
+Rendering users/new
+Rendered forms/_errors (0.00052)
+Rendered public/_navigation (0.00160)
+Rendered public/_debug_info (0.00003)
+Completed in 0.02247 (44 reqs/sec) | Rendering: 0.02178 (96%) | DB: 0.00185 (8%) | 200 OK [http://test.host/users?others%5Bpass_confirm%5D=secret&user%5Bemail%5D=gosheto%40somewhere.here&user%5Bpassword%5D=&user%5Busername%5D=gosheto]
+  [4;36;1mUser Load (0.000221)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'gosheto') LIMIT 1[0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-09-05 01:16:32) [POST]
+  Session ID: 
+  Parameters: {"others"=>{"pass_confirm"=>"secret"}, "action"=>"create", "controller"=>"users", "user"=>{"username"=>"gosheto", "password"=>"not a secret", "email"=>"gosheto@somewhere.here"}}
+Rendering template within layouts/public
+Rendering users/new
+Rendered forms/_errors (0.00051)
+Rendered public/_navigation (0.00102)
+Rendered public/_debug_info (0.00003)
+Completed in 0.00721 (138 reqs/sec) | Rendering: 0.00650 (90%) | DB: 0.00022 (3%) | 200 OK [http://test.host/users?others%5Bpass_confirm%5D=secret&user%5Bemail%5D=gosheto%40somewhere.here&user%5Bpassword%5D=&user%5Busername%5D=gosheto]
+  [4;35;1mUser Load (0.000081)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'gosheto') LIMIT 1[0m
+  [4;36;1mSQL (0.000068)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000039)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000055)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+  [4;35;1mSQL (0.000092)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000079)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000055)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000035)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000037)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000037)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000036)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000036)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000036)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000037)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000036)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000036)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000036)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000036)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000035)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000036)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000035)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000037)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000036)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000036)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000038)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000036)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000166)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+  [4;36;1mSQL (0.000061)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000037)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000035)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.000066)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000043)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000026)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000032)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000029)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000030)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000031)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000028)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000163)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+
+
+Processing PublicController#login (for 0.0.0.0 at 2009-09-05 01:17:22) [POST]
+  Session ID: 
+  Parameters: {"action"=>"login", "controller"=>"public", "user"=>{"username"=>"petko", "password"=>"1234"}}
+  [4;36;1mConfiguration Load (0.000156)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;35;1mUser Load (0.000113)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'petko' AND `users`.`password` = '0b6067cfd4f9dd7aef06f7234b8096cb') LIMIT 1[0m
+Redirected to http://test.host/
+Completed in 0.00403 (248 reqs/sec) | DB: 0.01295 (321%) | 302 Found [http://test.host/public/login?user%5Bpassword%5D=1234&user%5Busername%5D=petko]
+  [4;36;1mSQL (0.000047)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000028)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000041)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+
+
+Processing PublicController#login (for 0.0.0.0 at 2009-09-05 01:17:22) [POST]
+  Session ID: 
+  Parameters: {"action"=>"login", "controller"=>"public", "user"=>{"username"=>"petko", "password"=>"everything but petko's"}}
+  [4;35;1mConfiguration Load (0.000038)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;36;1mUser Load (0.000110)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'petko' AND `users`.`password` = '0c9de598b424f68250d2bc48372bb57b') LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;36;1mUser Load (0.000109)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`password` = '0c9de598b424f68250d2bc48372bb57b' AND `users`.`email` = 'petko') LIMIT 1[0m
+Redirected to http://test.host/public/login
+Completed in 0.00196 (510 reqs/sec) | DB: 0.00037 (19%) | 302 Found [http://test.host/public/login?user%5Bpassword%5D=everything+but+petko%27s&user%5Busername%5D=petko]
+  [4;35;1mSQL (0.000038)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000030)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000045)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-09-05 01:17:22) [POST]
+  Session ID: 
+  Parameters: {"others"=>{"pass_confirm"=>"secret"}, "action"=>"create", "controller"=>"users", "user"=>{"username"=>"gosheto", "password"=>"secret", "email"=>"gosheto@somewhere.here"}}
+  [4;36;1mConfiguration Load (0.000040)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;35;1mSQL (0.000111)[0m   [0mSELECT `email` FROM `users` WHERE (`users`.email = 'gosheto@somewhere.here') [0m
+  [4;36;1mSQL (0.000084)[0m   [0;1mSELECT `username` FROM `users` WHERE (`users`.username = 'gosheto') [0m
+  [4;35;1mUser Create (0.000134)[0m   [0mINSERT INTO `users` (`persistent_login`, `created_at`, `updated_at`, `username`, `group_id`, `full_name`, `password`, `email`) VALUES(NULL, '2009-09-04 22:17:22', '2009-09-04 22:17:22', 'gosheto', NULL, NULL, '1e880de92982018ab2a58492854e091e', 'gosheto@somewhere.here')[0m
+Redirected to http://test.host/
+Completed in 0.00444 (225 reqs/sec) | DB: 0.00054 (12%) | 302 Found [http://test.host/users?others%5Bpass_confirm%5D=secret&user%5Bemail%5D=gosheto%40somewhere.here&user%5Bpassword%5D=secret&user%5Busername%5D=gosheto]
+  [4;36;1mConfiguration Load (0.000041)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;35;1mUser Load (0.000114)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'gosheto' AND `users`.`password` = '1e880de92982018ab2a58492854e091e') LIMIT 1[0m
+  [4;36;1mConfiguration Load (0.000037)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;35;1mSQL (0.001404)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000028)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000100)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-09-05 01:17:23) [POST]
+  Session ID: 
+  Parameters: {"others"=>{"pass_confirm"=>"secret"}, "action"=>"create", "controller"=>"users", "user"=>{"username"=>"gosheto", "password"=>"", "email"=>"gosheto@somewhere.here"}}
+Rendering template within layouts/public
+Rendering users/new
+Rendered forms/_errors (0.00041)
+Rendered public/_navigation (0.00120)
+Rendered public/_debug_info (0.00002)
+Completed in 0.01624 (61 reqs/sec) | Rendering: 0.01570 (96%) | DB: 0.00172 (10%) | 200 OK [http://test.host/users?others%5Bpass_confirm%5D=secret&user%5Bemail%5D=gosheto%40somewhere.here&user%5Bpassword%5D=&user%5Busername%5D=gosheto]
+  [4;36;1mUser Load (0.000204)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'gosheto') LIMIT 1[0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-09-05 01:17:23) [POST]
+  Session ID: 
+  Parameters: {"others"=>{"pass_confirm"=>"secret"}, "action"=>"create", "controller"=>"users", "user"=>{"username"=>"gosheto", "password"=>"not a secret", "email"=>"gosheto@somewhere.here"}}
+Rendering template within layouts/public
+Rendering users/new
+Rendered forms/_errors (0.00039)
+Rendered public/_navigation (0.00076)
+Rendered public/_debug_info (0.00002)
+Completed in 0.00555 (180 reqs/sec) | Rendering: 0.00501 (90%) | DB: 0.00020 (3%) | 200 OK [http://test.host/users?others%5Bpass_confirm%5D=secret&user%5Bemail%5D=gosheto%40somewhere.here&user%5Bpassword%5D=&user%5Busername%5D=gosheto]
+  [4;35;1mUser Load (0.000059)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'gosheto') LIMIT 1[0m
+  [4;36;1mSQL (0.000053)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000029)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000049)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+  [4;35;1mSQL (0.000036)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000193)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000107)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.028092)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.003780)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000334)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000107)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000104)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000104)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000104)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000103)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000104)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000104)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000104)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000104)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000103)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000104)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000104)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000104)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000104)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000104)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000103)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.022825)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000437)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000105)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000066)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000042)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000028)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000026)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000026)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000028)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000142)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+  [4;36;1mSQL (0.000043)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000027)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000026)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.000066)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000043)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000033)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000032)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000028)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000030)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000031)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000171)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+
+
+Processing PublicController#login (for 0.0.0.0 at 2009-09-05 01:18:33) [POST]
+  Session ID: 
+  Parameters: {"action"=>"login", "controller"=>"public", "user"=>{"username"=>"petko", "password"=>"1234"}}
+  [4;36;1mConfiguration Load (0.000139)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;35;1mUser Load (0.000121)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'petko' AND `users`.`password` = '0b6067cfd4f9dd7aef06f7234b8096cb') LIMIT 1[0m
+Redirected to http://test.host/
+Completed in 0.00403 (247 reqs/sec) | DB: 0.01312 (325%) | 302 Found [http://test.host/public/login?user%5Bpassword%5D=1234&user%5Busername%5D=petko]
+  [4;36;1mSQL (0.000049)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000029)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000041)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+
+
+Processing PublicController#login (for 0.0.0.0 at 2009-09-05 01:18:33) [POST]
+  Session ID: 
+  Parameters: {"action"=>"login", "controller"=>"public", "user"=>{"username"=>"petko", "password"=>"everything but petko's"}}
+  [4;35;1mConfiguration Load (0.000041)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;36;1mUser Load (0.000113)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'petko' AND `users`.`password` = '0c9de598b424f68250d2bc48372bb57b') LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;36;1mUser Load (0.000110)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`password` = '0c9de598b424f68250d2bc48372bb57b' AND `users`.`email` = 'petko') LIMIT 1[0m
+Redirected to http://test.host/public/login
+Completed in 0.00199 (501 reqs/sec) | DB: 0.00038 (19%) | 302 Found [http://test.host/public/login?user%5Bpassword%5D=everything+but+petko%27s&user%5Busername%5D=petko]
+  [4;35;1mSQL (0.000038)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000028)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000031)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000028)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000046)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-09-05 01:18:33) [POST]
+  Session ID: 
+  Parameters: {"others"=>{"pass_confirm"=>"secret"}, "action"=>"create", "controller"=>"users", "user"=>{"username"=>"gosheto", "password"=>"secret", "email"=>"gosheto@somewhere.here"}}
+  [4;36;1mConfiguration Load (0.000041)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;35;1mSQL (0.000111)[0m   [0mSELECT `email` FROM `users` WHERE (`users`.email = 'gosheto@somewhere.here') [0m
+  [4;36;1mSQL (0.000081)[0m   [0;1mSELECT `username` FROM `users` WHERE (`users`.username = 'gosheto') [0m
+  [4;35;1mUser Create (0.000133)[0m   [0mINSERT INTO `users` (`persistent_login`, `created_at`, `updated_at`, `username`, `group_id`, `full_name`, `password`, `email`) VALUES(NULL, '2009-09-04 22:18:33', '2009-09-04 22:18:33', 'gosheto', NULL, NULL, '1e880de92982018ab2a58492854e091e', 'gosheto@somewhere.here')[0m
+Redirected to http://test.host/
+Completed in 0.00408 (244 reqs/sec) | DB: 0.00054 (13%) | 302 Found [http://test.host/users?others%5Bpass_confirm%5D=secret&user%5Bemail%5D=gosheto%40somewhere.here&user%5Bpassword%5D=secret&user%5Busername%5D=gosheto]
+  [4;36;1mConfiguration Load (0.000038)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;35;1mUser Load (0.000103)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'gosheto' AND `users`.`password` = '1e880de92982018ab2a58492854e091e') LIMIT 1[0m
+  [4;36;1mConfiguration Load (0.000038)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;35;1mSQL (0.000506)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000095)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-09-05 01:18:33) [POST]
+  Session ID: 
+  Parameters: {"others"=>{"pass_confirm"=>"secret"}, "action"=>"create", "controller"=>"users", "user"=>{"username"=>"gosheto", "password"=>"", "email"=>"gosheto@somewhere.here"}}
+Rendering template within layouts/public
+Rendering users/new
+Rendered forms/_errors (0.00039)
+Rendered public/_navigation (0.00121)
+Rendered public/_debug_info (0.00002)
+Completed in 0.01552 (64 reqs/sec) | Rendering: 0.01503 (96%) | DB: 0.00081 (5%) | 200 OK [http://test.host/users?others%5Bpass_confirm%5D=secret&user%5Bemail%5D=gosheto%40somewhere.here&user%5Bpassword%5D=&user%5Busername%5D=gosheto]
+  [4;36;1mUser Load (0.000194)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'gosheto') LIMIT 1[0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-09-05 01:18:33) [POST]
+  Session ID: 
+  Parameters: {"others"=>{"pass_confirm"=>"secret"}, "action"=>"create", "controller"=>"users", "user"=>{"username"=>"gosheto", "password"=>"not a secret", "email"=>"gosheto@somewhere.here"}}
+Rendering template within layouts/public
+Rendering users/new
+Rendered forms/_errors (0.00038)
+Rendered public/_navigation (0.00075)
+Rendered public/_debug_info (0.00002)
+Completed in 0.00539 (185 reqs/sec) | Rendering: 0.00486 (90%) | DB: 0.00019 (3%) | 200 OK [http://test.host/users?others%5Bpass_confirm%5D=secret&user%5Bemail%5D=gosheto%40somewhere.here&user%5Bpassword%5D=&user%5Busername%5D=gosheto]
+  [4;35;1mUser Load (0.000053)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'gosheto') LIMIT 1[0m
+  [4;36;1mSQL (0.000052)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.000069)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000043)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000026)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000028)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000026)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000028)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000026)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000028)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000028)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000136)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+  [4;36;1mSQL (0.000042)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000027)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.000067)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000042)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000031)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000029)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000030)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000030)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000165)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+
+
+Processing PublicController#login (for 0.0.0.0 at 2009-09-05 01:25:20) [POST]
+  Session ID: 
+  Parameters: {"action"=>"login", "controller"=>"public", "user"=>{"username"=>"petko", "password"=>"1234"}}
+  [4;36;1mConfiguration Load (0.000143)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;35;1mUser Load (0.000112)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'petko' AND `users`.`password` = '0b6067cfd4f9dd7aef06f7234b8096cb') LIMIT 1[0m
+Redirected to http://test.host/
+Completed in 0.00400 (249 reqs/sec) | DB: 0.01484 (370%) | 302 Found [http://test.host/public/login?user%5Bpassword%5D=1234&user%5Busername%5D=petko]
+  [4;36;1mSQL (0.000047)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000028)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000041)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+
+
+Processing PublicController#login (for 0.0.0.0 at 2009-09-05 01:25:20) [POST]
+  Session ID: 
+  Parameters: {"action"=>"login", "controller"=>"public", "user"=>{"username"=>"petko", "password"=>"everything but petko's"}}
+  [4;35;1mConfiguration Load (0.000039)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;36;1mUser Load (0.000110)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'petko' AND `users`.`password` = '0c9de598b424f68250d2bc48372bb57b') LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;36;1mUser Load (0.000110)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`password` = '0c9de598b424f68250d2bc48372bb57b' AND `users`.`email` = 'petko') LIMIT 1[0m
+Redirected to http://test.host/public/login
+Completed in 0.00197 (506 reqs/sec) | DB: 0.00037 (18%) | 302 Found [http://test.host/public/login?user%5Bpassword%5D=everything+but+petko%27s&user%5Busername%5D=petko]
+  [4;35;1mSQL (0.000037)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000028)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000031)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000130)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 830132885) [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-09-05 01:25:20) [POST]
+  Session ID: 
+  Parameters: {"others"=>{"pass_confirm"=>"secret"}, "action"=>"create", "controller"=>"users", "user"=>{"username"=>"gosheto", "password"=>"secret", "email"=>"gosheto@somewhere.here"}}
+  [4;36;1mConfiguration Load (0.000041)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;35;1mSQL (0.000101)[0m   [0mSELECT `email` FROM `users` WHERE (`users`.email = 'gosheto@somewhere.here') [0m
+  [4;36;1mSQL (0.000082)[0m   [0;1mSELECT `username` FROM `users` WHERE (`users`.username = 'gosheto') [0m
+  [4;35;1mUser Create (0.000133)[0m   [0mINSERT INTO `users` (`persistent_login`, `created_at`, `updated_at`, `username`, `group_id`, `full_name`, `password`, `email`) VALUES(NULL, '2009-09-04 22:25:20', '2009-09-04 22:25:20', 'gosheto', NULL, NULL, '1e880de92982018ab2a58492854e091e', 'gosheto@somewhere.here')[0m
+Redirected to http://test.host/
+Completed in 0.00411 (243 reqs/sec) | DB: 0.00061 (14%) | 302 Found [http://test.host/users?others%5Bpass_confirm%5D=secret&user%5Bemail%5D=gosheto%40somewhere.here&user%5Bpassword%5D=secret&user%5Busername%5D=gosheto]
+  [4;36;1mConfiguration Load (0.000039)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;35;1mUser Load (0.000104)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'gosheto' AND `users`.`password` = '1e880de92982018ab2a58492854e091e') LIMIT 1[0m
+  [4;36;1mConfiguration Load (0.000038)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;35;1mSQL (0.000531)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000029)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000102)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 830132885) [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-09-05 01:25:20) [POST]
+  Session ID: 
+  Parameters: {"others"=>{"pass_confirm"=>"secret"}, "action"=>"create", "controller"=>"users", "user"=>{"username"=>"gosheto", "password"=>"", "email"=>"gosheto@somewhere.here"}}
+Rendering template within layouts/public
+Rendering users/new
+Rendered forms/_errors (0.00040)
+Rendered public/_navigation (0.00211)
+Rendered public/_debug_info (0.00002)
+Completed in 0.01856 (53 reqs/sec) | Rendering: 0.01806 (97%) | DB: 0.00084 (4%) | 200 OK [http://test.host/users?others%5Bpass_confirm%5D=secret&user%5Bemail%5D=gosheto%40somewhere.here&user%5Bpassword%5D=&user%5Busername%5D=gosheto]
+  [4;36;1mUser Load (0.000200)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'gosheto') LIMIT 1[0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-09-05 01:25:20) [POST]
+  Session ID: 
+  Parameters: {"others"=>{"pass_confirm"=>"secret"}, "action"=>"create", "controller"=>"users", "user"=>{"username"=>"gosheto", "password"=>"not a secret", "email"=>"gosheto@somewhere.here"}}
+Rendering template within layouts/public
+Rendering users/new
+Rendered forms/_errors (0.00050)
+Rendered public/_navigation (0.00101)
+Rendered public/_debug_info (0.00003)
+Completed in 0.00832 (120 reqs/sec) | Rendering: 0.00762 (91%) | DB: 0.00020 (2%) | 200 OK [http://test.host/users?others%5Bpass_confirm%5D=secret&user%5Bemail%5D=gosheto%40somewhere.here&user%5Bpassword%5D=&user%5Busername%5D=gosheto]
+  [4;35;1mUser Load (0.000073)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'gosheto') LIMIT 1[0m
+  [4;36;1mSQL (0.000070)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.000064)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000043)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000026)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000028)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000028)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000026)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000028)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000026)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000026)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000141)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 830132885) [0m
+  [4;36;1mSQL (0.000042)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000028)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000100)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+  [4;35;1mSQL (0.000038)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000064)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000043)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000021)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000025)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000029)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000031)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000028)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000030)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000028)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000031)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000164)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+
+
+Processing PublicController#login (for 0.0.0.0 at 2009-09-05 01:27:13) [POST]
+  Session ID: 
+  Parameters: {"action"=>"login", "controller"=>"public", "user"=>{"username"=>"petko", "password"=>"1234"}}
+  [4;36;1mConfiguration Load (0.000155)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;35;1mUser Load (0.000113)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'petko' AND `users`.`password` = '0b6067cfd4f9dd7aef06f7234b8096cb') LIMIT 1[0m
+Redirected to http://test.host/
+Completed in 0.00401 (249 reqs/sec) | DB: 0.01314 (327%) | 302 Found [http://test.host/public/login?user%5Bpassword%5D=1234&user%5Busername%5D=petko]
+  [4;36;1mSQL (0.000048)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000028)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000041)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+
+
+Processing PublicController#login (for 0.0.0.0 at 2009-09-05 01:27:13) [POST]
+  Session ID: 
+  Parameters: {"action"=>"login", "controller"=>"public", "user"=>{"username"=>"petko", "password"=>"everything but petko's"}}
+  [4;35;1mConfiguration Load (0.000040)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;36;1mUser Load (0.000109)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'petko' AND `users`.`password` = '0c9de598b424f68250d2bc48372bb57b') LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;36;1mUser Load (0.000203)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`password` = '0c9de598b424f68250d2bc48372bb57b' AND `users`.`email` = 'petko') LIMIT 1[0m
+Redirected to http://test.host/public/login
+Completed in 0.00227 (440 reqs/sec) | DB: 0.00047 (20%) | 302 Found [http://test.host/public/login?user%5Bpassword%5D=everything+but+petko%27s&user%5Busername%5D=petko]
+  [4;35;1mSQL (0.000039)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000031)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000126)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 830132885) [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-09-05 01:27:13) [POST]
+  Session ID: 
+  Parameters: {"others"=>{"pass_confirm"=>"secret"}, "action"=>"create", "controller"=>"users", "user"=>{"username"=>"gosheto", "password"=>"secret", "email"=>"gosheto@somewhere.here"}}
+  [4;36;1mConfiguration Load (0.000041)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;35;1mSQL (0.000099)[0m   [0mSELECT `email` FROM `users` WHERE (`users`.email = 'gosheto@somewhere.here') [0m
+  [4;36;1mSQL (0.000083)[0m   [0;1mSELECT `username` FROM `users` WHERE (`users`.username = 'gosheto') [0m
+  [4;35;1mUser Create (0.000132)[0m   [0mINSERT INTO `users` (`persistent_login`, `created_at`, `updated_at`, `username`, `group_id`, `full_name`, `password`, `email`) VALUES(NULL, '2009-09-04 22:27:13', '2009-09-04 22:27:13', 'gosheto', NULL, NULL, '1e880de92982018ab2a58492854e091e', 'gosheto@somewhere.here')[0m
+Redirected to http://test.host/
+Completed in 0.00424 (235 reqs/sec) | DB: 0.00060 (14%) | 302 Found [http://test.host/users?others%5Bpass_confirm%5D=secret&user%5Bemail%5D=gosheto%40somewhere.here&user%5Bpassword%5D=secret&user%5Busername%5D=gosheto]
+  [4;36;1mConfiguration Load (0.000039)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;35;1mUser Load (0.000105)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'gosheto' AND `users`.`password` = '1e880de92982018ab2a58492854e091e') LIMIT 1[0m
+  [4;36;1mConfiguration Load (0.000038)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;35;1mSQL (0.000506)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000099)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 830132885) [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-09-05 01:27:13) [POST]
+  Session ID: 
+  Parameters: {"others"=>{"pass_confirm"=>"secret"}, "action"=>"create", "controller"=>"users", "user"=>{"username"=>"gosheto", "password"=>"", "email"=>"gosheto@somewhere.here"}}
+Rendering template within layouts/public
+Rendering users/new
+Rendered forms/_errors (0.00039)
+Rendered public/_navigation (0.00130)
+Rendered public/_debug_info (0.00002)
+Completed in 0.01603 (62 reqs/sec) | Rendering: 0.01552 (96%) | DB: 0.00081 (5%) | 200 OK [http://test.host/users?others%5Bpass_confirm%5D=secret&user%5Bemail%5D=gosheto%40somewhere.here&user%5Bpassword%5D=&user%5Busername%5D=gosheto]
+  [4;36;1mUser Load (0.000200)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'gosheto') LIMIT 1[0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-09-05 01:27:13) [POST]
+  Session ID: 
+  Parameters: {"others"=>{"pass_confirm"=>"secret"}, "action"=>"create", "controller"=>"users", "user"=>{"username"=>"gosheto", "password"=>"not a secret", "email"=>"gosheto@somewhere.here"}}
+Rendering template within layouts/public
+Rendering users/new
+Rendered forms/_errors (0.00038)
+Rendered public/_navigation (0.00077)
+Rendered public/_debug_info (0.00002)
+Completed in 0.00555 (180 reqs/sec) | Rendering: 0.00500 (90%) | DB: 0.00020 (3%) | 200 OK [http://test.host/users?others%5Bpass_confirm%5D=secret&user%5Bemail%5D=gosheto%40somewhere.here&user%5Bpassword%5D=&user%5Busername%5D=gosheto]
+  [4;35;1mUser Load (0.000059)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'gosheto') LIMIT 1[0m
+  [4;36;1mSQL (0.000054)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.000064)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000042)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000020)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000022)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000022)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000020)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000021)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000020)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000022)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000019)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000022)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000020)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000021)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000020)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000021)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000019)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000029)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000142)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 830132885) [0m
+Sent mail to petko@gmail.com
+
+From: CATS Bugtracker Do-not-reply <sales@code-ajax.co.uk>
+To: petko@gmail.com
+Subject: You requested reminder for your passwrd
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello,
+
+You've requested a reminder for your password at our bugtracker.
+The hashsum of your password is 0b6067cfd4f9dd7aef06f7234b8096cb.
+Thad does not help you much, don't you think? Feel sorry for yourself!
+
+CATS Bugtracker staff
+  [4;36;1mSQL (0.000054)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000028)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000123)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+  [4;35;1mSQL (0.000037)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000028)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000140)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000108)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.025429)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.002310)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000169)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000103)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000104)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000104)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000104)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000104)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000104)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000104)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000105)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000104)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000103)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000104)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000104)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000103)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000104)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000103)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000103)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.022930)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000274)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000104)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000079)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000054)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000035)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000043)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000037)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000043)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000037)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000048)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000038)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000041)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000036)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000210)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+
+
+Processing PublicController#login (for 0.0.0.0 at 2009-09-05 01:27:53) [POST]
+  Session ID: 
+  Parameters: {"action"=>"login", "controller"=>"public", "user"=>{"username"=>"petko", "password"=>"1234"}}
+  [4;36;1mConfiguration Load (0.000148)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;35;1mUser Load (0.000148)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'petko' AND `users`.`password` = '0b6067cfd4f9dd7aef06f7234b8096cb') LIMIT 1[0m
+Redirected to http://test.host/
+Completed in 0.00517 (193 reqs/sec) | DB: 0.01640 (317%) | 302 Found [http://test.host/public/login?user%5Bpassword%5D=1234&user%5Busername%5D=petko]
+  [4;36;1mSQL (0.000060)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000039)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000063)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+
+
+Processing PublicController#login (for 0.0.0.0 at 2009-09-05 01:27:53) [POST]
+  Session ID: 
+  Parameters: {"action"=>"login", "controller"=>"public", "user"=>{"username"=>"petko", "password"=>"everything but petko's"}}
+  [4;35;1mConfiguration Load (0.000053)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;36;1mUser Load (0.000153)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'petko' AND `users`.`password` = '0c9de598b424f68250d2bc48372bb57b') LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;36;1mUser Load (0.000146)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`password` = '0c9de598b424f68250d2bc48372bb57b' AND `users`.`email` = 'petko') LIMIT 1[0m
+Redirected to http://test.host/public/login
+Completed in 0.00263 (380 reqs/sec) | DB: 0.00051 (19%) | 302 Found [http://test.host/public/login?user%5Bpassword%5D=everything+but+petko%27s&user%5Busername%5D=petko]
+  [4;35;1mSQL (0.000052)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000037)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000039)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000036)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000168)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 830132885) [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-09-05 01:27:53) [POST]
+  Session ID: 
+  Parameters: {"others"=>{"pass_confirm"=>"secret"}, "action"=>"create", "controller"=>"users", "user"=>{"username"=>"gosheto", "password"=>"secret", "email"=>"gosheto@somewhere.here"}}
+  [4;36;1mConfiguration Load (0.000057)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;35;1mSQL (0.000136)[0m   [0mSELECT `email` FROM `users` WHERE (`users`.email = 'gosheto@somewhere.here') [0m
+  [4;36;1mSQL (0.000109)[0m   [0;1mSELECT `username` FROM `users` WHERE (`users`.username = 'gosheto') [0m
+  [4;35;1mUser Create (0.000166)[0m   [0mINSERT INTO `users` (`persistent_login`, `created_at`, `updated_at`, `username`, `group_id`, `full_name`, `password`, `email`) VALUES(NULL, '2009-09-04 22:27:53', '2009-09-04 22:27:53', 'gosheto', NULL, NULL, '1e880de92982018ab2a58492854e091e', 'gosheto@somewhere.here')[0m
+Redirected to http://test.host/
+Completed in 0.00544 (183 reqs/sec) | DB: 0.00080 (14%) | 302 Found [http://test.host/users?others%5Bpass_confirm%5D=secret&user%5Bemail%5D=gosheto%40somewhere.here&user%5Bpassword%5D=secret&user%5Busername%5D=gosheto]
+  [4;36;1mConfiguration Load (0.000053)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;35;1mUser Load (0.000143)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'gosheto' AND `users`.`password` = '1e880de92982018ab2a58492854e091e') LIMIT 1[0m
+  [4;36;1mConfiguration Load (0.000051)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;35;1mSQL (0.000551)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000037)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000137)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 830132885) [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-09-05 01:27:53) [POST]
+  Session ID: 
+  Parameters: {"others"=>{"pass_confirm"=>"secret"}, "action"=>"create", "controller"=>"users", "user"=>{"username"=>"gosheto", "password"=>"", "email"=>"gosheto@somewhere.here"}}
+Rendering template within layouts/public
+Rendering users/new
+Rendered forms/_errors (0.00052)
+Rendered public/_navigation (0.00158)
+Rendered public/_debug_info (0.00003)
+Completed in 0.02040 (49 reqs/sec) | Rendering: 0.01973 (96%) | DB: 0.00097 (4%) | 200 OK [http://test.host/users?others%5Bpass_confirm%5D=secret&user%5Bemail%5D=gosheto%40somewhere.here&user%5Bpassword%5D=&user%5Busername%5D=gosheto]
+  [4;36;1mUser Load (0.000222)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'gosheto') LIMIT 1[0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-09-05 01:27:53) [POST]
+  Session ID: 
+  Parameters: {"others"=>{"pass_confirm"=>"secret"}, "action"=>"create", "controller"=>"users", "user"=>{"username"=>"gosheto", "password"=>"not a secret", "email"=>"gosheto@somewhere.here"}}
+Rendering template within layouts/public
+Rendering users/new
+Rendered forms/_errors (0.00052)
+Rendered public/_navigation (0.00102)
+Rendered public/_debug_info (0.00003)
+Completed in 0.00824 (121 reqs/sec) | Rendering: 0.00753 (91%) | DB: 0.00022 (2%) | 200 OK [http://test.host/users?others%5Bpass_confirm%5D=secret&user%5Bemail%5D=gosheto%40somewhere.here&user%5Bpassword%5D=&user%5Busername%5D=gosheto]
+  [4;35;1mUser Load (0.000079)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'gosheto') LIMIT 1[0m
+  [4;36;1mSQL (0.000067)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.000067)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000042)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000021)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000021)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000020)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000019)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000019)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000020)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000023)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000020)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000021)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000020)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000029)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000028)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000026)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000143)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 830132885) [0m
+Sent mail to petko@gmail.com
+
+From: CATS Bugtracker Do-not-reply <sales@code-ajax.co.uk>
+To: petko@gmail.com
+Subject: You requested reminder for your passwrd
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello,
+
+You've requested a reminder for your password at our bugtracker.
+The hashsum of your password is 0b6067cfd4f9dd7aef06f7234b8096cb.
+Thad does not help you much, don't you think? Feel sorry for yourself!
+
+CATS Bugtracker staff
+  [4;36;1mSQL (0.000048)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000028)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000111)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+  [4;35;1mSQL (0.000037)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000028)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000081)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000054)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000036)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000043)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000037)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000039)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000037)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000040)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000036)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000041)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000037)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000202)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+
+
+Processing PublicController#login (for 0.0.0.0 at 2009-09-05 01:28:14) [POST]
+  Session ID: 
+  Parameters: {"action"=>"login", "controller"=>"public", "user"=>{"username"=>"petko", "password"=>"1234"}}
+  [4;36;1mConfiguration Load (0.000155)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;35;1mUser Load (0.000147)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'petko' AND `users`.`password` = '0b6067cfd4f9dd7aef06f7234b8096cb') LIMIT 1[0m
+Redirected to http://test.host/
+Completed in 0.00515 (194 reqs/sec) | DB: 0.01551 (301%) | 302 Found [http://test.host/public/login?user%5Bpassword%5D=1234&user%5Busername%5D=petko]
+  [4;36;1mSQL (0.000060)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000038)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000056)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+
+
+Processing PublicController#login (for 0.0.0.0 at 2009-09-05 01:28:14) [POST]
+  Session ID: 
+  Parameters: {"action"=>"login", "controller"=>"public", "user"=>{"username"=>"petko", "password"=>"everything but petko's"}}
+  [4;35;1mConfiguration Load (0.000054)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;36;1mUser Load (0.000166)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'petko' AND `users`.`password` = '0c9de598b424f68250d2bc48372bb57b') LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;36;1mUser Load (0.000147)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`password` = '0c9de598b424f68250d2bc48372bb57b' AND `users`.`email` = 'petko') LIMIT 1[0m
+Redirected to http://test.host/public/login
+Completed in 0.00269 (371 reqs/sec) | DB: 0.00052 (19%) | 302 Found [http://test.host/public/login?user%5Bpassword%5D=everything+but+petko%27s&user%5Busername%5D=petko]
+  [4;35;1mSQL (0.000053)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000037)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000040)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000037)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000153)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 830132885) [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-09-05 01:28:14) [POST]
+  Session ID: 
+  Parameters: {"others"=>{"pass_confirm"=>"secret"}, "action"=>"create", "controller"=>"users", "user"=>{"username"=>"gosheto", "password"=>"secret", "email"=>"gosheto@somewhere.here"}}
+  [4;36;1mConfiguration Load (0.000055)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;35;1mSQL (0.000129)[0m   [0mSELECT `email` FROM `users` WHERE (`users`.email = 'gosheto@somewhere.here') [0m
+  [4;36;1mSQL (0.000109)[0m   [0;1mSELECT `username` FROM `users` WHERE (`users`.username = 'gosheto') [0m
+  [4;35;1mUser Create (0.000163)[0m   [0mINSERT INTO `users` (`persistent_login`, `created_at`, `updated_at`, `username`, `group_id`, `full_name`, `password`, `email`) VALUES(NULL, '2009-09-04 22:28:14', '2009-09-04 22:28:14', 'gosheto', NULL, NULL, '1e880de92982018ab2a58492854e091e', 'gosheto@somewhere.here')[0m
+Redirected to http://test.host/
+Completed in 0.00537 (186 reqs/sec) | DB: 0.00078 (14%) | 302 Found [http://test.host/users?others%5Bpass_confirm%5D=secret&user%5Bemail%5D=gosheto%40somewhere.here&user%5Bpassword%5D=secret&user%5Busername%5D=gosheto]
+  [4;36;1mConfiguration Load (0.000052)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;35;1mUser Load (0.000136)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'gosheto' AND `users`.`password` = '1e880de92982018ab2a58492854e091e') LIMIT 1[0m
+  [4;36;1mConfiguration Load (0.000050)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'db_salt') LIMIT 1[0m
+  [4;35;1mSQL (0.000524)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000037)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000131)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 830132885) [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-09-05 01:28:14) [POST]
+  Session ID: 
+  Parameters: {"others"=>{"pass_confirm"=>"secret"}, "action"=>"create", "controller"=>"users", "user"=>{"username"=>"gosheto", "password"=>"", "email"=>"gosheto@somewhere.here"}}
+Rendering template within layouts/public
+Rendering users/new
+Rendered forms/_errors (0.00051)
+Rendered public/_navigation (0.00156)
+Rendered public/_debug_info (0.00002)
+Completed in 0.02105 (47 reqs/sec) | Rendering: 0.02041 (96%) | DB: 0.00093 (4%) | 200 OK [http://test.host/users?others%5Bpass_confirm%5D=secret&user%5Bemail%5D=gosheto%40somewhere.here&user%5Bpassword%5D=&user%5Busername%5D=gosheto]
+  [4;36;1mUser Load (0.000200)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'gosheto') LIMIT 1[0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-09-05 01:28:14) [POST]
+  Session ID: 
+  Parameters: {"others"=>{"pass_confirm"=>"secret"}, "action"=>"create", "controller"=>"users", "user"=>{"username"=>"gosheto", "password"=>"not a secret", "email"=>"gosheto@somewhere.here"}}
+Rendering template within layouts/public
+Rendering users/new
+Rendered forms/_errors (0.00037)
+Rendered public/_navigation (0.00076)
+Rendered public/_debug_info (0.00002)
+Completed in 0.00535 (186 reqs/sec) | Rendering: 0.00482 (89%) | DB: 0.00020 (3%) | 200 OK [http://test.host/users?others%5Bpass_confirm%5D=secret&user%5Bemail%5D=gosheto%40somewhere.here&user%5Bpassword%5D=&user%5Busername%5D=gosheto]
+  [4;35;1mUser Load (0.000052)[0m   [0mSELECT * FROM `users` WHERE (`users`.`username` = 'gosheto') LIMIT 1[0m
+  [4;36;1mSQL (0.000050)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.000064)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000042)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000030)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000028)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000028)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000026)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000028)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000160)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 830132885) [0m
+Sent mail to petko@gmail.com
+
+From: CATS Bugtracker Do-not-reply <sales@code-ajax.co.uk>
+To: petko@gmail.com
+Subject: You requested reminder for your passwrd
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello,
+
+You've requested a reminder for your password at our bugtracker.
+The hashsum of your password is 0b6067cfd4f9dd7aef06f7234b8096cb.
+Thad does not help you much, don't you think? Feel sorry for yourself!
+
+CATS Bugtracker staff
+  [4;36;1mSQL (0.000069)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000029)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000148)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+  [4;35;1mSQL (0.000036)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000065)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000043)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000026)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000028)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000028)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000026)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000030)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000028)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000026)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000026)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000136)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 830132885) [0m
+Sent mail to petko@gmail.com
+
+From: CATS Bugtracker Do-not-reply <sales@code-ajax.co.uk>
+To: petko@gmail.com
+Subject: You requested reminder for your passwrd
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello,
+
+You've requested a reminder for your password at our bugtracker.
+The hashsum of your password is 0b6067cfd4f9dd7aef06f7234b8096cb.
+Thad does not help you much, don't you think? Feel sorry for yourself!
+
+CATS Bugtracker staff
+  [4;36;1mSQL (0.000065)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000029)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000143)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`username` = 'petko') LIMIT 1[0m
+  [4;35;1mSQL (0.000036)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000027)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000027)[0m   [0mROLLBACK[0m

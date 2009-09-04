@@ -2,8 +2,8 @@ module UsersHelper
 
   include Avatar::View::ActionViewSupport
   
-  USERS_DEFAULT_AVATAR = "#{ApplicationHelper::SITE_URL}images/no-avatar.gif"
-  USERS_DEFAULT_AVATAR_SMALL = "#{ApplicationHelper::SITE_URL}images/no-avatar-small.gif"
+  USERS_DEFAULT_AVATAR = "#{SITE_URL}images/no-avatar.gif"
+  USERS_DEFAULT_AVATAR_SMALL = "#{SITE_URL}images/no-avatar-small.gif"
   
   
   def avatar_for(user, args = {})

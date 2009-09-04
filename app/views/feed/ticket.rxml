@@ -1,7 +1,7 @@
 xml.instruct! :xml, :version=>"1.0" 
 xml.rss(:version=>"2.0"){
   xml.channel{
-    xml.title("#{h(@ticket.name)} (##{@ticket.id}) ticket for #{h @ticket.project.name} on CATS")
+    xml.title("#{h(@ticket.name)} - Ticket for #{h @ticket.project.name} [##{@ticket.id}] on CATS")
     xml.link(full_url(project_ticket_path(@ticket.project, @ticket)) )
     xml.description "Feed yourself with comments for this ticket."
     xml.language 'en-gb'
@@ -15,7 +15,7 @@ xml.rss(:version=>"2.0"){
           xml.description(textile_this comment.body)      
           xml.author(h "#{(comment.user.name if comment.user) || 'deleted user'}")               
           xml.pubDate(comment.created_at.to_s(:rss))
-          xml.link(full_url(project_ticket_path(comment.ticket.project, comment.ticket))+"#comment_#{comment.id}")
+          xml.link(full_url project_ticket_comment_path(comment.ticket.project, comment.ticket, comment))
           xml.guid(full_url project_ticket_comment_path(comment.ticket.project, comment.ticket, comment))
         end
       end

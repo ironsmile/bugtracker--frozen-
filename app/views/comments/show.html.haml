@@ -1,6 +1,6 @@
 = render :partial => @comment
 A comment for 
-%em= link_to @comment.ticket.name, project_ticket_path(@comment.ticket.project, @comment.ticket)
+%strong= link_to @comment.ticket.name, project_ticket_path(@comment.ticket.project, @comment.ticket)+"#comment_#{@comment.id}"
 ticket which is part of
-%em= link_to @comment.ticket.project.name, project_path(@comment.ticket.project)
+%strong= link_to @comment.ticket.project.name, project_path(@comment.ticket.project)
 project

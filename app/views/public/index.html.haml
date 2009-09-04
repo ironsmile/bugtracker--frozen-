@@ -1,1 +1,7 @@
-%p You will have to log in or register!
+%h3 Some Announcment that someone has to create first!
+%p 
+  You will have to 
+  = link_to "log in", :action=>"login"
+  or 
+  = link_to "register", :controller => "users", :action => "new"
+  to have at least the slightest amount of access to the stuff in this bugtracking community!

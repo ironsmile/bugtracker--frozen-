@@ -1,0 +1,4 @@
+page.insert_html :bottom, :comments, :partial => @comments
+page[:new_comments_notice].fade
+page << "nc_per_updater.stop(); new_comments_last_refresh = #{Time.now.to_i}; start_looking();"
+page["comment_#{@comments.first.id}"].scroll_to

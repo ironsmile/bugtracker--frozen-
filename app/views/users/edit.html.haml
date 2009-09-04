@@ -44,6 +44,6 @@ User Profile
         = hidden_field "others", "action", :value => "group"
         %p.label
           = f.label :group_id, "Change to:"
-          = f.select :group_id, Group.find(:all).map{ |g| [ g.name, g.id ] }, {}, { :onchange => "LoadingMessage.show(); $(this).form.onsubmit();" }    
+          = f.select :group_id, [[nil,nil]]+Group.find(:all).map{ |g| [ g.name, g.id ] }, {}, { :onchange => "LoadingMessage.show(); $(this).form.onsubmit();" }    
           %noscript
             = f.submit "Submit", :onclick => "LoadingMessage.show();"

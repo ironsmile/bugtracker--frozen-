@@ -18,7 +18,8 @@ Rails::Initializer.run do |config|
   config.gem "RedCloth"
   config.gem 'mislav-will_paginate', :version => '>= 2.2.3', :lib => 'will_paginate', :source => 'http://gems.github.com'
 #   config.gem "paperclip" # using a plugin instead. Made few modifications on it
-
+  config.gem "openrain-action_mailer_tls", :lib => "smtp_tls.rb", :source => "http://gems.github.com"
+  
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
   # -- all .rb files in that directory are automatically loaded.

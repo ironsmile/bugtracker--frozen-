@@ -6,17 +6,30 @@ p{
   margin: 5px 0;
 }
 
-#loading_message{
+#loading_message, #new_comments_notice{
   text-align: center;
   position: fixed;
 /*  width: 100px;
   height: 60px;*/
   padding: 5px 15px;
+}
+
+#loading_message{
   top: 0;
   right: 0;
   border: 1px solid black;
   background-color: white;
 }
+
+#new_comments_notice{
+  bottom: 0;
+  right: 0;
+  border: 1px solid black;
+  background-color: #FADCB3;
+  width: 150px;
+  font-size: 9pt;
+}
+
 
 #top_nav, #left_nav{
   background-color: #D1DBEB;

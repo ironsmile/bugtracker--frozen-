@@ -5,7 +5,7 @@
       %legend Enter Your Details
       %table
         %tr
-          %td.label= f.label :username, "Screen Name:"
+          %td.label= f.label :username, "Screen Name or email:"
           %td= f.text_field :username
         %tr
           %td.label= f.label :password, "Password:"
@@ -19,4 +19,8 @@
 %p
   You have no account? Fill our
   = link_to "registration form!", new_user_path
+%p
+  Already have an account but forgot your passwrd? Click
+  = link_to "here", url_for(:action=>"forgotten")
+  to retrieve it.
 = javascript_tag "$('user_username').focus();"

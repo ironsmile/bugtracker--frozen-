@@ -4,7 +4,7 @@ class Comment < ActiveRecord::Base
   belongs_to :user
   has_attached_file :attachment, 
                     :path => ":rails_root/public/uploads/:class/:attachment/:id/:style/:basename.:extension",
-                    :url  => "#{ApplicationHelper::SITE_URL}uploads/:class/:attachment/:id/:style/:basename.:extension",
+                    :url  => "#{SITE_URL}uploads/:class/:attachment/:id/:style/:basename.:extension",
                     :styles => { :thumb => "90x90>", :preview => "650x650>" },
                     :whiny => false
   

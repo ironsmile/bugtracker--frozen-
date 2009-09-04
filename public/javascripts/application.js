@@ -7,6 +7,7 @@
 LoadingMessage = {
   messages : 0,
   inited : false,
+  id : 'loading_message',
   
   init : function(){
     LoadingMessage.inited = true;
@@ -14,7 +15,7 @@ LoadingMessage = {
     var lmimg = new Image()
     lmimg.src = SITE_ROOT+"images/progress_active.gif"
     var lmp = new Element("p").appendChild( lmimg );
-    var lmd = new Element("div", { id : 'loading_message', style : 'display:none' }).update( lmt ).insert( lmp )
+    var lmd = new Element("div", { id : LoadingMessage.id, style : 'display:none' }).update( lmt ).insert( lmp )
     $(document.body).appendChild(lmd)
   },
   
@@ -23,7 +24,7 @@ LoadingMessage = {
       LoadingMessage.init()
     }
     if ( LoadingMessage.messages < 1 ){
-      $('loading_message').show();
+      $(LoadingMessage.id).show();
     }
     LoadingMessage.messages += 1;
   },
@@ -31,13 +32,13 @@ LoadingMessage = {
   hide : function(){
     LoadingMessage.messages -= 1;
     if( LoadingMessage.messages < 1 ){
-      $('loading_message').hide();
+      $(LoadingMessage.id).hide();
       LoadingMessage.messages = 0;
     }
   }
 }
 
-// for the forms
+// for the registration forms
 function put_ajax_loading_img(el_id,image_path){
   var e = $(el_id);
   e.absolutize();

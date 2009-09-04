@@ -1,0 +1,8 @@
+- form_for :user do |form|
+  %fieldset
+    %legend= @page_title
+    %p
+      Fill in your email address so we can send you an email with instructions how to recover your password.
+    = form.label :email, "Email:"
+    = form.text_field :email
+    = form.submit "Send"

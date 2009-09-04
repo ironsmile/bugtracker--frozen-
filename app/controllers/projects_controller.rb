@@ -9,6 +9,7 @@ class ProjectsController < ApplicationController
 
   def show
     get_url_project
+    @rss = { :href => url_for( :controller => 'feed', :action => 'project', :id => @project.id ) }
   end
 
   def create

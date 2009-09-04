@@ -1,0 +1,6 @@
+unless @new_comments.empty?
+  page[:new_comments_notice_text].replace_html("<p>New: #{pluralize(@new_comments.size, 'comment')}</p>")
+  page << "if( ! $('new_comments_notice').visible() ){"
+    page[:new_comments_notice].appear
+  page << "}"
+end
