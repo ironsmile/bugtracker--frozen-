@@ -54,11 +54,40 @@ class PublicController < ApplicationController
       email = params[:user][:email]
       user = User.find_by_email(email)
       unless user.nil?
-        UserMailer.deliver_forgotten_password(user)
+        request = PasswordResetRequest.new({
+          :user_id => user.id, 
+          :request_hash => hash_string("#{Time.now}#{user.password}#{user.id}") 
+        })
+        request.save
+        UserMailer.deliver_forgotten_password(user, request.request_hash)
         flash[:notice] = "The email has been sent."
         redirect_to :action => "index"
       else
         flash[:error] = "There is no user with this email in our database!"
+      end
+    end
+  end
+  
+  def reset_forgotten_password
+    @page_title = "Now, go and change your password!"
+    @request = PasswordResetRequest.find_by_request_hash( params[:id] )
+    if @request.nil?
+      flash[:error] = "Wrong request for password change!"
+      redirect_to :action => "index"
+    elsif ( posted_param?( :password ) )
+      if( not params[:password][:new].empty? and params[:password][:new] == params[:password][:confirm] )
+        flash[:notice] = "Password changed successfully. You can now log in using it."
+        user = User.find(@request.user_id)
+        user.password = hash_string( params[:password][:new] )
+        user.save
+        @request.destroy
+        
+        #garbage collecting
+        Array(PasswordResetRequest.find_by_user_id( user.id )).each{ |r| r.destroy }
+        
+        redirect_to :action => "login"
+      else
+        flash[:error] = "Tried to save an empyt password or the confirmation did not match!"
       end
     end
   end

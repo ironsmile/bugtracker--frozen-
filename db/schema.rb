@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090628153919) do
+ActiveRecord::Schema.define(:version => 20090905022236) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id"
@@ -33,6 +33,13 @@ ActiveRecord::Schema.define(:version => 20090628153919) do
   create_table "groups", :force => true do |t|
     t.string   "name"
     t.integer  "order",      :default => 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "password_reset_requests", :force => true do |t|
+    t.integer  "user_id",      :null => false
+    t.string   "request_hash"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -71,6 +78,13 @@ ActiveRecord::Schema.define(:version => 20090628153919) do
 
   create_table "statuses", :force => true do |t|
     t.string   "name",       :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "ticket_mailings", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "ticket_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

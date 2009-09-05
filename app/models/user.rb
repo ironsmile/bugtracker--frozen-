@@ -1,7 +1,10 @@
 class User < ActiveRecord::Base
   
+  #validations
+  
   USERNAME_MIN_SIZE = 5
-  USERNAME_REGEXP = Regexp.new("^[a-z0-9_]{#{USERNAME_MIN_SIZE},}$",true)
+  USERNAME_MAX_SIZE = 20
+  USERNAME_REGEXP = Regexp.new("^[a-z0-9_]{#{USERNAME_MIN_SIZE},#{USERNAME_MAX_SIZE}}$",true)
   EMAIL_REGEXP = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
   
   validates_format_of :email, 
@@ -9,15 +12,20 @@ class User < ActiveRecord::Base
   
   validates_format_of :username, 
                       :with => USERNAME_REGEXP,
-                      :message => "must contains letters, digits or underscores only! Minimum length - #{USERNAME_MIN_SIZE} characters."
+                      :message => "must contains letters, digits or underscores only! Minimum length - #{USERNAME_MIN_SIZE} characters and maximum - #{USERNAME_MAX_SIZE}"
   
   validates_uniqueness_of :email, :message => "User with that email already exists!"
   validates_uniqueness_of :username, :message => "User with that username already exists!"
   validates_presence_of :password
   
+  # Relations
+  
   has_many :comments
   has_many :tickets
   belongs_to :group
+  
+  
+  # methods
   
   before_destroy :destroy_cascade
   

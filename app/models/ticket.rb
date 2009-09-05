@@ -9,22 +9,7 @@ class Ticket < ActiveRecord::Base
   belongs_to :priority
   belongs_to :user
   
-#   Statuses = {
-#     :open => "Open",
-#     :closed => "Closed",
-#     :reponed => "Re-opened",
-#     :doc => "Documentation",
-#     :feedback => "Feedback",
-#     :disaster => "Disaster",
-#     :unsolvable => "Unsolvable!"
-#   }
-#   
-#   Priorities = {
-#     :minor => "Minor",
-#     :normal => "Normal",
-#     :major => "Major",
-#     :critical => "Critical"
-#   }
+
   
   validates_presence_of :status_id
   validates_presence_of :priority_id

@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   
+  before_filter :get_url_project, :only => [ :destroy, :update, :edit, :show ]
   before_filter :authenticate_project_manager, :except => [ :show, :index ]
   
   def index
@@ -8,7 +9,6 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    get_url_project
     @rss = { :href => url_for( :controller => 'feed', :action => 'project', :id => @project.id ) }
   end
 
@@ -25,14 +25,12 @@ class ProjectsController < ApplicationController
   end
 
   def edit
-    get_url_project
     respond_to do |format|
       format.html
     end
   end
 
   def update
-    get_url_project
     responder @project.update_attributes(params[:project])
     if params[:others][:version] and not params[:others][:version].empty?
       @project.current_version = params[:others][:version]
@@ -40,7 +38,7 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
-    get_url_project.destroy
+    @project.destroy
     flash[:notice] = "#{@project.name} project destroyed!"
     respond_to do |format|
       format.html{ redirect_to :action => :index }
@@ -67,7 +65,7 @@ class ProjectsController < ApplicationController
   end
 
   def authenticate_project_manager
-    unless @logged_user.admin?
+    unless @logged_user.admin? or ( @project and @project.user.id == @logged_user.id )
       flash[:error] = "Do not play with our URLs!"
       redirect_to :action => "index"
       return false
